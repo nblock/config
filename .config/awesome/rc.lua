@@ -41,6 +41,11 @@ layouts =
     awful.layout.suit.magnifier,
     awful.layout.suit.floating
 }
+
+-- some commands
+local commands = {}
+commands.suspend = "sudo pm-suspend"
+
 -- }}}
 
 -- {{{ Tags
@@ -194,6 +199,9 @@ root.buttons(awful.util.table.join(
 
 -- {{{ Key bindings
 globalkeys = awful.util.table.join(
+    --user defined
+    awful.key({}, "XF86PowerOff", function() awful.util.spawn_with_shell(commands.suspend) end ),
+    --default bindings
     awful.key({ modkey,           }, "Left",   awful.tag.viewprev       ),
     awful.key({ modkey,           }, "Right",  awful.tag.viewnext       ),
     awful.key({ modkey,           }, "Escape", awful.tag.history.restore),
@@ -431,4 +439,4 @@ os.execute("kmix &")
 os.execute("krandrtray &")
 -- }}}
 
--- vim: fdm=marker fdl=0
+-- vim: fdm=marker fdl=0 sts=4 ai
