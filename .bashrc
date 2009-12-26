@@ -6,7 +6,7 @@ xbindkeys
 # Check for an interactive session
 [ -z "$PS1" ] && return
 
-#ooo3.0 export test...
+#ooo3.0 export...
 export OOO_FORCE_DESKTOP=gnome
 export EDITOR=vim
 export LANG=de_AT.UTF-8
