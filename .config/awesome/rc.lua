@@ -1,12 +1,13 @@
+-- {{{ Load libraries
 -- Standard awesome library
 require("awful")
 require("awful.autofocus")
 require("awful.rules")
--- require("shifty")
 -- Theme handling library
 require("beautiful")
 -- Notification library
 require("naughty")
+-- }}}
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
@@ -40,6 +41,9 @@ layouts =
     awful.layout.suit.magnifier,
     awful.layout.suit.floating
 }
+-- }}}
+
+-- {{{ Tags
 floatapps =
 {
      -- by class
@@ -59,14 +63,12 @@ apptags =
 -- Define if we want to use titlebar on all applications.
 use_titlebar = false
 
--- {{{ Tags
 -- Define a tag table which hold all screen tags.
 tags = {}
 for s = 1, screen.count() do
     -- Each screen has its own tag table.
     tags[s] = awful.tag({ 1, 2, 3, 4, 5, 6, 7, 8, 9 }, s, awful.layout.suit.tile)
 end
--- }}}
 
 ---some naming
 tags[1][1].name = "1 download"
@@ -78,8 +80,7 @@ tags[1][4].name = "4 music"
 awful.layout.set(layouts[1], tags[1][4]) --tile.left
 tags[1][5].name = "5 news" 
 awful.layout.set(layouts[1], tags[1][5]) --tile.left
--- {{{ Menu
-
+-- }}}
 
 -- {{{ Menu
 -- Create a laucher widget and a main menu
@@ -364,6 +365,7 @@ client.add_signal("focus", function(c) c.border_color = beautiful.border_focus e
 client.add_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
 
+-- {{{ Tag-mapping functions
 -- Hook function to execute when a new client appears.
 awful.hooks.manage.register(function (c, startup)
     -- If we are not managing this application at startup,
@@ -422,6 +424,11 @@ awful.hooks.manage.register(function (c, startup)
     -- Honor size hints: if you want to drop the gaps between windows, set this to false.
     -- c.size_hints_honor = false
 end)
+-- }}}
 
+-- {{{ Autostart
 os.execute("kmix &")
 os.execute("krandrtray &")
+-- }}}
+
+-- vim: fdm=marker fdl=0
