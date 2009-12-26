@@ -1,0 +1,66 @@
+!urxvt settings
+!--[Title]--!
+urxvt*title:           	urxvt
+urxvt*termName:        	rxvt-unicode
+urxvt*cursorBlink:     	true
+urxvt*urgentOnBell:	true
+
+!--[Url's /launching/marking/yanking]--!
+urxvt.perl-ext:        	default,matcher
+urxvt.urlLauncher:     	/usr/bin/firefox
+urxvt.matcher.button:  	1 
+
+!--[Fonts]--!
+urxvt*font: 		xft:Bitstream Vera Sans Mono:pixelsize=14:antialias=false
+urxvt.italicFont:	xft:Bitstream Vera Sans Mono:italic:autohint=true:antialias=false
+urxvt.boldItalicFont:	xft:Bitstream Vera Sans Mono:bold:italic:autohint=true:antialias=false
+urxvt.underlineColor:   yellow
+urxvt.scrollBar:        false
+
+!--[Urxvt Options]--!
+urxvt.boldMode:         false
+urxvt.imLocale:         de_AT.UTF-8
+urxvt.loginShell:       true
+urxvt.saveLines:        512
+urxvt.inheritPixmap:    true
+urxvt.borderless:       true
+urxvt.jumpScroll:       true
+urxvt.tintColor:        white
+urxvt.internalBorder:   0
+urxvt.cursorBlink:      false
+urxvt.cursorColor:      #dd9900
+urxvt.cursorColor2:     #000000
+urxvt.background:       #222222
+urxvt.foreground:       #ddccbb
+urxvt.colorBD:          #ffffff
+urxvt.colorIT:          #bbbbbb
+urxvt.colorUL:          #999999
+urxvt.underlineColor:   #999999
+urxvt*saveLines:	512
+!urxvt*depth:          	32
+!urxvt*background:     	rgba:02f0/04f0/04f0/cccc
+urxvt*transparent:	true
+urxvt*shading:		10
+
+!--[Colours]--!
+!Theme One from 
+!http://phraktured.net/terminal-colors/terminal%20theme.tags.html
+*background: rgb:00/00/00
+*foreground: rgb:a8/a8/a8
+*color0:     rgb:00/00/00
+*color1:     rgb:a8/00/00
+*color2:     rgb:00/a8/00
+*color3:     rgb:a8/54/00
+*color4:     rgb:00/00/a8
+*color5:     rgb:a8/00/a8
+*color6:     rgb:00/a8/a8
+*color7:     rgb:a8/a8/a8
+*color8:     rgb:54/50/54
+*color9:     rgb:f8/54/50
+*color10:    rgb:50/fc/50
+*color11:    rgb:f8/fc/50
+*color12:    rgb:50/54/f8
+*color13:    rgb:f8/54/f8
+*color14:    rgb:50/fc/f8
+*color15:    rgb:f8/fc/f8
+
