@@ -45,6 +45,23 @@ layouts =
 -- some commands
 local commands = {}
 commands.suspend = "sudo pm-suspend"
+commands.help = "touch ~/seppal"
+commands.lock = "xscreensaver-command --lock"
+--audio stuff
+commands.raisevol = "amixer set Master 2%+"
+commands.lowervol = "amixer set Master 2%-"
+commands.mute = "amixer sset Master toggle"
+commands.cmusnext = "cmus-remote --next"
+commands.cmusprev = "cmus-remote --prev"
+commands.cmuspause = "cmus-remote --pause"
+commands.cmusplay = "cmus-remote --play"
+commands.calc = "krunner"
+--todo
+commands.fileman = "pcmanfm"
+commands.calc = "xcalc"
+commands.browser = "firefox"
+commands.screenshot = "scrot -e 'mv $f ~/screenshots'"
+commands.screenwin = "scrot -s -b -e 'mv $f ~/screenshots'"
 
 -- }}}
 
@@ -201,6 +218,26 @@ root.buttons(awful.util.table.join(
 globalkeys = awful.util.table.join(
     --user defined
     awful.key({}, "XF86PowerOff", function() awful.util.spawn_with_shell(commands.suspend) end ),
+    awful.key({}, "Help", function() awful.util.spawn_with_shell(commands.help) end ),
+    awful.key({ modkey,           }, "F12",   function () awful.util.spawn_with_shell(commands.lock) end),
+    --audio stuff
+    awful.key({}, "XF86AudioMute", function() awful.util.spawn_with_shell(commands.mute) end ),
+    awful.key({}, "XF86AudioRaiseVolume", function() awful.util.spawn_with_shell(commands.raisevol) end ),
+    awful.key({}, "XF86AudioLowerVolume", function() awful.util.spawn_with_shell(commands.lowervol) end ),
+    awful.key({}, "XF86AudioNext", function() awful.util.spawn_with_shell(commands.cmusnext) end ),
+    awful.key({}, "XF86AudioPrev", function() awful.util.spawn_with_shell(commands.cmusprev) end ),
+    awful.key({}, "XF86AudioPlay", function() awful.util.spawn_with_shell(commands.cmuspause) end ),
+    awful.key({}, "XF86Tools", function() awful.util.spawn_with_shell(commands.cmusplay) end ),
+    awful.key({}, "XF86Calculator", function() awful.util.spawn_with_shell(commands.calc) end ),
+
+   -- awful.key({}, "XF86MyComputer", function() awful.util.spawn_with_shell(commands.fileman) end ),
+   -- awful.key({}, "XF86Mail", function() awful.util.spawn_with_shell(commands.mail) end ),
+   -- awful.key({}, "XF86HomePage", function() awful.util.spawn_with_shell(commands.browser) end ),
+   -- awful.key({"Mod1"}, "Print", function() awful.util.spawn_with_shell(commands.screenwin) end ),
+   -- awful.key({}, "Print", function() awful.util.spawn_with_shell(commands.screenshot) end ),
+   -- awful.key({}, "XF86Sleep", function() awful.util.spawn_with_shell(commands.lock) end ),
+   -- awful.key({"Control", "Mod1"}, "l", function() awful.util.spawn_with_shell(commands.lock) end ),
+
     --default bindings
     awful.key({ modkey,           }, "Left",   awful.tag.viewprev       ),
     awful.key({ modkey,           }, "Right",  awful.tag.viewnext       ),
@@ -244,7 +281,6 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Control" }, "l",     function () awful.tag.incncol(-1)         end),
     awful.key({ modkey,           }, "space", function () awful.layout.inc(layouts,  1) end),
     awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(layouts, -1) end),
-    awful.key({ modkey,           }, "F12",   function () awful.util.spawn('xscreensaver-command --lock') end),
 
     -- Prompt
     awful.key({ modkey },            "r",     function () mypromptbox[mouse.screen]:run() end),
@@ -435,7 +471,7 @@ end)
 -- }}}
 
 -- {{{ Autostart
-os.execute("kmix &")
+--os.execute("kmix &")
 os.execute("krandrtray &")
 -- }}}
 
