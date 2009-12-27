@@ -49,9 +49,9 @@ commands.suspend = "sudo pm-suspend"
 commands.help = "touch ~/seppal"
 commands.lock = "xscreensaver-command --lock"
 --audio stuff
-commands.raisevol = "amixer set Master 2%+"
-commands.lowervol = "amixer set Master 2%-"
-commands.mute = "amixer sset Master toggle"
+commands.raisevol = "amixer set PCM 2%+"
+commands.lowervol = "amixer set PCM 2%-"
+commands.mute = "amixer sset PCM toggle"
 commands.cmusnext = "cmus-remote --next"
 commands.cmusprev = "cmus-remote --prev"
 commands.cmuspause = "cmus-remote --pause"
@@ -123,54 +123,41 @@ mylauncher = awful.widget.launcher({ image = image(beautiful.awesome_icon),
                                      menu = mymainmenu })
 -- }}}
 
-
-
-
 -- {{{ Wibox
 -- {{{ Widgets configuration
 -- {{{ Reusable separators
 local spacer         = widget({ type = "textbox", name = "spacer" })
 local separator      = widget({ type = "textbox", name = "separator" })
-spacer.text    = " SPACER "
-separator.text = " <span foreground='#4a3f2e'>|</span> "
+spacer.text    = " "
+separator.text = " <span foreground='brown'>|</span> "
 -- }}}
 
--- Initialize widget
--- {{{ CPU load
+-- {{{ CPU load 
 local cpuwidget = widget({ type = "textbox" })
--- Register widget
-vicious.register(cpuwidget, vicious.widgets.cpu, "$1%")
+vicious.register(cpuwidget, vicious.widgets.cpu, "<span foreground='orange'>load: </span><span foreground='green'>$2%</span><span foreground='orange'> - </span><span foreground='green'>$3%</span>")
 -- }}}
-
--- {{{ CPU tempzoerature
--- Initialize widget
+ 
+-- {{{ CPU temperature
 local thermalwidget  = widget({ type = "textbox" })
--- Register widgets
-vicious.register(thermalwidget, vicious.widgets.thermal, "<span foreground='#9cb955'>$1°C</span>", 20, "thermal_zone1")
+vicious.register(thermalwidget, vicious.widgets.thermal, "<span foreground='orange'>temp: </span><span foreground='green'>$1°C</span>", 20, "thermal_zone1")
 -- }}}
 
 -- {{{ Battery state
 -- Widget icon
 -- baticon       = widget({ type = "imagebox", name = "baticon" })
 -- baticon.image = image(beautiful.widget_bat)
--- Initialize widget
 local batwidget     = widget({ type = "textbox" })
--- Register widget
-vicious.register(batwidget, vicious.widgets.bat, "<span foreground='#bba85b'>$1$2%</span>", 60, "C1C5")
+vicious.register(batwidget, vicious.widgets.bat, "<span foreground='orange'>bat: </span><span foreground='green'>$1$2%</span>", 60, "C1C5")
 -- }}}
 
 -- {{{ Date and time
--- Initialize widget
 local datewidget = widget({ type = "textbox" })
--- Register widget
-vicious.register(datewidget, vicious.widgets.date, "<span foreground='#925e5a'>%a, %d.%m.%y - %H:%M</span>", 10)
+vicious.register(datewidget, vicious.widgets.date, "<span foreground='green'>%a, %d.%m.%y - %H:%M</span>", 5)
 -- }}}
 
 -- {{{ Volume widget
--- Initialize widget
---local volwidget = widget({ type = "textbox" })
--- Register widget
---vicious.register(volwidget, vicious.widgets.volume, "<span foreground='#925e5a'>Master</span>", 10)
+local volwidget = widget({ type = "textbox" })
+vicious.register(volwidget, vicious.widgets.volume, "<span foreground='orange'>vol: </span><span foreground='green'>$1%</span>", 1, 'PCM')
 -- }}}
 
 -- {{{ System tray
@@ -207,7 +194,7 @@ for s = 1, screen.count() do
     taglist[s] = awful.widget.taglist(s, awful.widget.taglist.label.all, taglist.buttons)
     -- Create the wibox
     wibox[s] = awful.wibox({
-        position = "top", height = 14, screen = s,
+        position = "top", screen = s,
         fg = beautiful.fg_normal, bg = beautiful.bg_normal
     })
     -- Add widgets to the wibox
@@ -216,20 +203,16 @@ for s = 1, screen.count() do
         layout = awful.widget.layout.horizontal.leftright
     },
         s == screen.count() and systray or nil,
-        separator, datewidget,
- --      separator, volwidget,
+        spacer, datewidget,
+	separator, volwidget,
         separator, batwidget,
         separator, cpuwidget,
         separator, thermalwidget,
-        --separator, mpdwidget,
         layout = awful.widget.layout.horizontal.rightleft
     }
 end
 -- }}}
 -- }}}
-
-
-
 
 -- {{{ Mouse bindings
 root.buttons(awful.util.table.join(
