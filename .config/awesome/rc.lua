@@ -478,7 +478,6 @@ end)
 -- }}}
 
 -- {{{ Autostart
---os.execute("kmix &")
 os.execute("krandrtray &")
 -- }}}
 
