@@ -1,3 +1,12 @@
+-- {{{ License
+-- rc.lua, works with awesome 3.4.2 (Arch Linux)
+-- author: nblock <nblock [at] archlinux.us>
+-- based on multiple rc.lua files from different awesome users
+--
+-- This work is licensed under the Creative Commons Attribution Share
+-- Alike License: http://creativecommons.org/licenses/by-sa/3.0/
+-- }}}
+
 -- {{{ Load libraries
 -- Standard awesome library
 require("awful")
@@ -63,7 +72,6 @@ commands.calc = "xcalc"
 commands.browser = "firefox"
 commands.screenshot = "scrot -e 'mv $f ~/screenshots'"
 commands.screenwin = "scrot -s -b -e 'mv $f ~/screenshots'"
-
 -- }}}
 
 -- {{{ Tags
