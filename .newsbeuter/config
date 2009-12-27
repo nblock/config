@@ -1,0 +1,79 @@
+#newsbeuter 2.1 config - notizblock
+
+#newsbeuter via proxy
+#in this case -> privoxy (tor)
+use-proxy no
+proxy localhost:8118
+download-retries 4
+download-timeout 45
+
+#reload stuff
+reload-threads 10	#parallel reload threads.
+auto-reload yes		#auto reload stuff
+reload-time 20		#min
+refresh-on-startup yes
+
+#use this useragent to get osvdb feed
+user-agent "Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.0)"
+
+#various
+max-items 150		#number of feeds to hold in db
+goto-next-feed yes
+#FF3.5 (requires config: browser.tabs.loadDivertedInBackground to be 'true')
+browser "firefox -new-tab %u > /dev/null 2>&1"
+#browser "kfmclient newTab" 	#konqueror ?
+cleanup-on-quit yes	#cleanup is always nice
+
+#visibility of feeds
+show-read-feeds no	#list read feeds ? 
+show-read-articles no	#list read articles ?
+
+#files
+cache-file "~/.newsbeuter/cache.db"
+error-log  "~/.newsbeuter/error.log"
+save-path "~/"		#where to save feeds
+
+#kill files
+#ignore-article "*" "title =~ \"CSI\""
+ignore-article "*" "title =~ \"more rss feeds from\""
+#ignore-article "*" "title =~ \"Obama\""
+
+#key bindings
+bind-key c next-unread-feed
+bind-key x prev-unread-feed
+bind-key m toggle-article-read
+bind-key ^B pageup
+bind-key ^F pagedown
+bind-key k up
+bind-key j down
+
+#macro
+macro o open-in-browser ; toggle-article-read
+
+#color config
+color background	red   	white
+color listnormal	blue	white
+color listfocus		white  	red	bold
+color info		yellow  blue	bold
+color article		blue	white
+
+#layout
+datetime-format %d.%m-%H:%M
+text-width 0		#max text width to render html
+display-article-progress yes
+show-keymap-hint no	#keyboard hints ?
+always-display-description true
+#feedlist-format "%4i %n %11u %t
+article-sort-order date # parameter syntax: <sortfield>[-<direction>]
+articlelist-format "%4i %f %D   %?T?|%-17T|  ?%t"
+
+#always download this feed -> ignore last-modification timestamp
+always-download "http://www.movie-blog.org/feed/rss"
+
+#reset unread flag when feed gets updated after reading
+reset-unread-on-update "http://blog.fefe.de/rss.xml?html"
+
+#podbeuter
+download-path "~/download/podcasts"
+max-downloads 3
+bind-key z pb-cancel
