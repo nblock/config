@@ -172,6 +172,7 @@ vicious.register(datewidget, vicious.widgets.date, "<span foreground='#925e5a'>%
 -- Register widget
 --vicious.register(volwidget, vicious.widgets.volume, "<span foreground='#925e5a'>Master</span>", 10)
 -- }}}
+
 -- {{{ System tray
 systray = widget({ type = "systray" })
 -- }}}
@@ -307,7 +308,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(layouts, -1) end),
 
     -- Prompt
-    awful.key({ modkey },            "r",     function () mypromptbox[mouse.screen]:run() end),
+    awful.key({ modkey },            "r",     function () promptbox[mouse.screen]:run() end),
 
     awful.key({ modkey }, "x",
               function ()
