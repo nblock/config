@@ -57,6 +57,7 @@ local commands = {}
 commands.suspend = "sudo pm-suspend"
 commands.help = "touch ~/seppal"
 commands.lock = "xscreensaver-command --lock"
+commands.screenshot = "scrot -e 'mv $f ~/bilder/screenshots'"
 --audio stuff
 commands.raisevol = "amixer set PCM 2%+"
 commands.lowervol = "amixer set PCM 2%-"
@@ -70,8 +71,6 @@ commands.calc = "krunner"
 commands.fileman = "pcmanfm"
 commands.calc = "xcalc"
 commands.browser = "firefox"
-commands.screenshot = "scrot -e 'mv $f ~/screenshots'"
-commands.screenwin = "scrot -s -b -e 'mv $f ~/screenshots'"
 -- }}}
 
 -- {{{ Tags
@@ -245,12 +244,11 @@ globalkeys = awful.util.table.join(
     awful.key({}, "XF86AudioPlay", function() awful.util.spawn_with_shell(commands.cmuspause) end ),
     awful.key({}, "XF86Tools", function() awful.util.spawn_with_shell(commands.cmusplay) end ),
     awful.key({}, "XF86Calculator", function() awful.util.spawn_with_shell(commands.calc) end ),
+    awful.key({}, "Print", function() awful.util.spawn_with_shell(commands.screenshot) end ),
 
    -- awful.key({}, "XF86MyComputer", function() awful.util.spawn_with_shell(commands.fileman) end ),
    -- awful.key({}, "XF86Mail", function() awful.util.spawn_with_shell(commands.mail) end ),
    -- awful.key({}, "XF86HomePage", function() awful.util.spawn_with_shell(commands.browser) end ),
-   -- awful.key({"Mod1"}, "Print", function() awful.util.spawn_with_shell(commands.screenwin) end ),
-   -- awful.key({}, "Print", function() awful.util.spawn_with_shell(commands.screenshot) end ),
    -- awful.key({}, "XF86Sleep", function() awful.util.spawn_with_shell(commands.lock) end ),
    -- awful.key({"Control", "Mod1"}, "l", function() awful.util.spawn_with_shell(commands.lock) end ),
 
