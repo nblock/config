@@ -85,6 +85,7 @@ floatapps =
 apptags =
 {
      ["JDownloader"] = { screen = 1, tag = 1 },
+     ["jdownloader"] = { screen = 1, tag = 1 },
      ["KMail"] = { screen = 1, tag = 2 },
      ["Kopete"] = { screen = 1, tag = 3 },
      ["Choqok"] = { screen = 1, tag = 3 },
