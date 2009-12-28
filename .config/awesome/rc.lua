@@ -369,15 +369,18 @@ awful.rules.rules = {
     properties = { tag = tags[1][3],switchtotag = false } },
     { rule = { class = "Kopete" },
     properties = { tag = tags[1][3],switchtotag = false } },
+    -- cmus
+    { rule = { instance = "cmus" },
+    properties = { tag = tags[1][4],switchtotag = true } },
+    -- news
+    { rule = { instance = "newsbeuter" },
+    properties = { tag = tags[1][5],switchtotag = true } },
     --file manager
     { rule = { class = "Dolphin" },
     properties = { tag = tags[1][6],switchtotag = true } },
     --misc stuff
     { rule = { class = "Konqueror" },
     properties = { tag = tags[1][9],switchtotag = true } },
-    { rule = { instance = "newsbeuter" },
-    properties = { tag = tags[1][9],switchtotag = true } },
-    
 }
 -- }}}
 
