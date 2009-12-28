@@ -290,15 +290,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(layouts, -1) end),
 
     -- Prompt
-    awful.key({ modkey },            "r",     function () promptbox[mouse.screen]:run() end),
-
-    awful.key({ modkey }, "x",
-              function ()
-                  awful.prompt.run({ prompt = "Run Lua code: " },
-                  mypromptbox[mouse.screen].widget,
-                  awful.util.eval, nil,
-                  awful.util.getdir("cache") .. "/history_eval")
-              end)
+    awful.key({ modkey },            "r",     function () promptbox[mouse.screen]:run() end)
 )
 
 clientkeys = awful.util.table.join(
