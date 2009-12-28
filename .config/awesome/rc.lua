@@ -98,21 +98,11 @@ commands.browser = "firefox"
 tags = {}
 for s = 1, screen.count() do
     -- Each screen has its own tag table.
-    tags[s] = awful.tag({ 1, 2, 3, 4, 5, 6, 7, 8, 9 }, s, awful.layout.suit.tile)
+    tags[s] = awful.tag({ 
+     "1 download", "2 mail", "3 chat", 
+     "4 music", "5 news", "6 fm", 
+     7, 8, 9 }, s, awful.layout.suit.tile)
 end
-
----some naming
-tags[1][1].name = "1 download"
-tags[1][2].name = "2 mail"
-awful.layout.set(layouts[1], tags[1][2]) --tile.left
-tags[1][3].name = "3 chat"
-awful.layout.set(layouts[1], tags[1][3]) --tile.left
-tags[1][4].name = "4 music"
-awful.layout.set(layouts[1], tags[1][4]) --tile.left
-tags[1][5].name = "5 news" 
-awful.layout.set(layouts[1], tags[1][5]) --tile.left
-tags[1][6].name = "6 fm" 
-awful.layout.set(layouts[1], tags[1][6]) --tile.left
 -- }}}
 
 -- {{{ Menu
