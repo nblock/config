@@ -270,7 +270,14 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(layouts, -1) end),
 
     -- Prompt
-    awful.key({ modkey },            "r",     function () promptbox[mouse.screen]:run() end)
+    awful.key({ modkey },            "r",     function () promptbox[mouse.screen]:run() end),
+    -- Run stuff in a Terminal
+    awful.key({ modkey }, "x", function ()
+     awful.prompt.run({ prompt = "Run in Terminal: " }, promptbox[mouse.screen].widget,
+     function (prog)
+      awful.util.spawn_with_shell(terminal .. " -name " .. prog .. " -e /bin/bash -c " .. prog)
+     end)
+    end)
 )
 
 clientkeys = awful.util.table.join(
@@ -367,6 +374,8 @@ awful.rules.rules = {
     properties = { tag = tags[1][6],switchtotag = true } },
     --misc stuff
     { rule = { class = "Konqueror" },
+    properties = { tag = tags[1][9],switchtotag = true } },
+    { rule = { instance = "newsbeuter" },
     properties = { tag = tags[1][9],switchtotag = true } },
     
 }
