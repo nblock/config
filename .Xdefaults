@@ -1,46 +1,46 @@
-!urxvt settings
+!URxvt settings
 !--[Title]--!
-urxvt*title:           	urxvt
-urxvt*termName:        	rxvt-unicode
-urxvt*cursorBlink:     	true
-urxvt*urgentOnBell:	true
+URxvt*title:           	urxvt
+URxvt*termName:        	rxvt-unicode
+URxvt*cursorBlink:     	true
+URxvt*urgentOnBell:	true
 
 !--[Url's /launching/marking/yanking]--!
-urxvt.perl-ext:        	default,matcher
-urxvt.urlLauncher:     	/usr/bin/firefox
-urxvt.matcher.button:  	1 
+URxvt.perl-ext:        	default,matcher
+URxvt.urlLauncher:     	/usr/bin/firefox
+URxvt.matcher.button:  	1 
 
 !--[Fonts]--!
-urxvt*font: 		xft:Bitstream Vera Sans Mono:pixelsize=14:antialias=false
-urxvt.italicFont:	xft:Bitstream Vera Sans Mono:italic:autohint=true:antialias=false
-urxvt.boldItalicFont:	xft:Bitstream Vera Sans Mono:bold:italic:autohint=true:antialias=false
-urxvt.underlineColor:   yellow
-urxvt.scrollBar:        false
+URxvt*font: 		xft:Bitstream Vera Sans Mono:pixelsize=14:antialias=false
+URxvt.italicFont:	xft:Bitstream Vera Sans Mono:italic:autohint=true:antialias=false
+URxvt.boldItalicFont:	xft:Bitstream Vera Sans Mono:bold:italic:autohint=true:antialias=false
+URxvt.underlineColor:   yellow
+URxvt.scrollBar:        false
 
 !--[Urxvt Options]--!
-urxvt.boldMode:         false
-urxvt.imLocale:         de_AT.UTF-8
-urxvt.loginShell:       true
-urxvt.saveLines:        512
-urxvt.inheritPixmap:    true
-urxvt.borderless:       true
-urxvt.jumpScroll:       true
-urxvt.tintColor:        white
-urxvt.internalBorder:   0
-urxvt.cursorBlink:      false
-urxvt.cursorColor:      #dd9900
-urxvt.cursorColor2:     #000000
-urxvt.background:       #222222
-urxvt.foreground:       #ddccbb
-urxvt.colorBD:          #ffffff
-urxvt.colorIT:          #bbbbbb
-urxvt.colorUL:          #999999
-urxvt.underlineColor:   #999999
-urxvt*saveLines:	512
-!urxvt*depth:          	32
-!urxvt*background:     	rgba:02f0/04f0/04f0/cccc
-urxvt*transparent:	true
-urxvt*shading:		10
+URxvt.boldMode:         false
+URxvt.imLocale:         de_AT.UTF-8
+URxvt.loginShell:       true
+URxvt.saveLines:        512
+URxvt.inheritPixmap:    true
+URxvt.borderless:       true
+URxvt.jumpScroll:       true
+URxvt.tintColor:        white
+URxvt.internalBorder:   0
+URxvt.cursorBlink:      false
+URxvt.cursorColor:      #dd9900
+URxvt.cursorColor2:     #000000
+URxvt.background:       #222222
+URxvt.foreground:       #ddccbb
+URxvt.colorBD:          #ffffff
+URxvt.colorIT:          #bbbbbb
+URxvt.colorUL:          #999999
+URxvt.underlineColor:   #999999
+URxvt*saveLines:	512
+!URxvt*depth:          	32
+!URxvt*background:     	rgba:02f0/04f0/04f0/cccc
+URxvt*transparent:	true
+URxvt*shading:		10
 
 !--[Colours]--!
 !Theme One from 
