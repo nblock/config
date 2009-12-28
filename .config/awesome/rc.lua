@@ -74,26 +74,6 @@ commands.browser = "firefox"
 -- }}}
 
 -- {{{ Tags
---floatapps =
---{
---     -- by class
---     ["MPlayer"] = true,
---     ["pinentry"] = true,
---     ["gimp"] = true,
---}
---
---apptags =
---{
---     ["JDownloader"] = { screen = 1, tag = 1 },
---     ["jdownloader"] = { screen = 1, tag = 1 },
---     ["KMail"] = { screen = 1, tag = 2 },
---     ["Kopete"] = { screen = 1, tag = 3 },
---     ["Choqok"] = { screen = 1, tag = 3 },
---}
-
--- Define if we want to use titlebar on all applications.
---use_titlebar = false
-
 -- Define a tag table which hold all screen tags.
 tags = {}
 for s = 1, screen.count() do
@@ -396,7 +376,7 @@ awful.rules.rules = {
 -- Signal function to execute when a new client appears.
 client.add_signal("manage", function (c, startup)
     -- Add a titlebar
-    awful.titlebar.add(c, { modkey = modkey })
+    -- awful.titlebar.add(c, { modkey = modkey })
     -- remove gaps
     c.size_hints_honor = false
 
@@ -423,67 +403,6 @@ end)
 
 client.add_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.add_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
--- }}}
-
----- {{{ Tag-mapping functions
----- Hook function to execute when a new client appears.
---awful.hooks.manage.register(function (c, startup)
---    -- If we are not managing this application at startup,
---    -- move it to the screen where the mouse is.
---    -- We only do it for filtered windows (i.e. no dock, etc).
---    if not startup and awful.client.focus.filter(c) then
---        c.screen = mouse.screen
---    end
---
---    if use_titlebar then
---        -- Add a titlebar
---        awful.titlebar.add(c, { modkey = modkey })
---    end
---    -- Add mouse bindings
---    c:buttons({
---        button({ }, 1, function (c) client.focus = c; c:raise() end),
---        button({ modkey }, 1, awful.mouse.client.move),
---        button({ modkey }, 3, awful.mouse.client.resize)
---    })
---    -- New client may not receive focus
---    -- if they're not focusable, so set border anyway.
---    c.border_width = beautiful.border_width
---    c.border_color = beautiful.border_normal
---
---    -- Check if the application should be floating.
---    local cls = c.class
---    local inst = c.instance
---    if floatapps[cls] then
---        awful.client.floating.set(c, floatapps[cls])
---    elseif floatapps[inst] then
---        awful.client.floating.set(c, floatapps[inst])
---    end
---
---    -- Check application->screen/tag mappings.
---    local target
---    if apptags[cls] then
---        target = apptags[cls]
---    elseif apptags[inst] then
---        target = apptags[inst]
---    end
---    if target then
---        c.screen = target.screen
---        awful.client.movetotag(tags[target.screen][target.tag], c)
---    end
---
---    -- Do this after tag mapping, so you don't see it on the wrong tag for a split second.
---    client.focus = c
---
---    -- Set key bindings
---    c:keys(clientkeys)
---
---    -- Set the windows at the slave,
---    -- i.e. put it at the end of others instead of setting it master.
---    -- awful.client.setslave(c)
---
---    -- Honor size hints: if you want to drop the gaps between windows, set this to false.
---    -- c.size_hints_honor = false
---end)
 -- }}}
 
 -- {{{ Autostart
