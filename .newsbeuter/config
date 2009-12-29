@@ -21,7 +21,6 @@ max-items 150		#number of feeds to hold in db
 goto-next-feed yes
 #FF3.5 (requires config: browser.tabs.loadDivertedInBackground to be 'true')
 browser "firefox -new-tab %u > /dev/null 2>&1"
-#browser "kfmclient newTab" 	#konqueror ?
 cleanup-on-quit yes	#cleanup is always nice
 
 #visibility of feeds
@@ -44,8 +43,13 @@ bind-key x prev-unread-feed
 bind-key m toggle-article-read
 bind-key ^B pageup
 bind-key ^F pagedown
+bind-key g pageup
+bind-key G pagedown
 bind-key k up
 bind-key j down
+bind-key d save
+bind-key s sort
+bind-key S revsort
 
 #macro
 macro o open-in-browser ; toggle-article-read
