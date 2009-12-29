@@ -24,7 +24,7 @@ require("vicious")
 beautiful.init("/usr/share/awesome/themes/zenburn/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "urxvt"
+terminal = "urxvtc"
 editor = "vim" 
 editor_cmd = terminal .. " -e " .. editor
 

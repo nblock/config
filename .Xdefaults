@@ -1,6 +1,6 @@
 !URxvt settings
 !--[Title]--!
-URxvt*title:           	urxvt
+URxvt*title:           	urxvtc
 URxvt*termName:        	rxvt-unicode
 URxvt*cursorBlink:     	true
 URxvt*urgentOnBell:	true
