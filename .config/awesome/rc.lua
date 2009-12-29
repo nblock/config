@@ -38,18 +38,18 @@ modkey = "Mod4"
 -- Table of layouts to cover with awful.layout.inc, order matters.
 layouts =
 {
-    awful.layout.suit.tile,
-    awful.layout.suit.tile.left,
-    awful.layout.suit.tile.bottom,
-    awful.layout.suit.tile.top,
-    awful.layout.suit.fair,
-    awful.layout.suit.fair.horizontal,
-    awful.layout.suit.spiral,
-    awful.layout.suit.spiral.dwindle,
-    awful.layout.suit.max,
-    awful.layout.suit.max.fullscreen,
-    awful.layout.suit.magnifier,
-    awful.layout.suit.floating
+    awful.layout.suit.tile,		--1
+    awful.layout.suit.tile.left,	--2
+    awful.layout.suit.tile.bottom,	--3
+    awful.layout.suit.tile.top,		--4
+    awful.layout.suit.fair,		--5
+    awful.layout.suit.fair.horizontal,	--6
+    awful.layout.suit.spiral,		--7
+    awful.layout.suit.spiral.dwindle,	--8
+    awful.layout.suit.max,		--9
+    awful.layout.suit.max.fullscreen,	--10
+    awful.layout.suit.magnifier,	--11
+    awful.layout.suit.floating		--12
 }
 
 -- some commands
@@ -81,7 +81,13 @@ for s = 1, screen.count() do
     tags[s] = awful.tag({ 
      "1 download", "2 mail", "3 chat", 
      "4 music", "5 news", "6 fm", 
-     7, 8, 9 }, s, awful.layout.suit.tile)
+     7, 8, 9 }, s,
+    {layouts[3], layouts[1], layouts[1], -- Tags: 1, 2, 3
+     layouts[1], layouts[1], layouts[1], --       4, 5 ,6
+     layouts[1], layouts[1], layouts[1]  --       7, 8, 9
+    })
+ 
+
 end
 -- }}}
 
