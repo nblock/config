@@ -361,6 +361,8 @@ awful.rules.rules = {
     --downloading stuff
     { rule = { class = "JDownloader" },
     properties = { tag = tags[1][1],switchtotag = true } },
+    { rule = { instance = "rtorrent" },
+    properties = { tag = tags[1][1],switchtotag = false } },
     -- mail
     { rule = { class = "Kmail" },
     properties = { tag = tags[1][2],switchtotag = true } },
