@@ -19,6 +19,9 @@ autocmd FileType tex map <F5> :w<CR>:!latexmk -pdf "%"<CR>
 autocmd FileType tex map <F6> :w<CR>:!latexmk -pdf finalreport.tex<CR>
 nnoremap <silent> <C-n><nobr> <wbr></nobr>:tabnext<CR>
 nnoremap <silent> <C-p><nobr> <wbr></nobr>:tabprevious<CR>
+nnoremap <F2> :set invpaste paste?<CR>
+imap <F2> <C-O><F2>
+set pastetoggle=<F2>
 
 "folding for python
 autocmd FileType python setlocal foldmethod=indent

@@ -43,8 +43,8 @@ bind-key x prev-unread-feed
 bind-key m toggle-article-read
 bind-key ^B pageup
 bind-key ^F pagedown
-bind-key g pageup
-bind-key G pagedown
+bind-key H pageup
+bind-key L pagedown
 bind-key k up
 bind-key j down
 bind-key d save
