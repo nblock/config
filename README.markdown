@@ -1,13 +1,9 @@
-Arch Linux Configs
-=============
+h1. Arch Linux configs
 
-
-Clean:
-=============
+h2. Clean
 ![Arch 2009-12-30](http://omploader.org/tMzRidg)
 <p>[Full Version](http://omploader.org/vMzRidg)</p>
 
-Dirty:
-=============
+h3. Dirty
 ![Arch 2009-12-30](http://omploader.org/tMzRieA)
 <p>[Full Version](http://omploader.org/vMzRieA)</p>
