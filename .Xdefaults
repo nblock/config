@@ -23,7 +23,7 @@ URxvt.imLocale:         de_AT.UTF-8
 URxvt.loginShell:       true
 URxvt.saveLines:        512
 URxvt.inheritPixmap:    true
-URxvt.borderless:       true
+URxvt.borderless:       false
 URxvt.jumpScroll:       true
 URxvt.tintColor:        white
 URxvt.internalBorder:   0
