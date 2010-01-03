@@ -146,6 +146,11 @@ local volwidget = widget({ type = "textbox" })
 vicious.register(volwidget, vicious.widgets.volume, "<span foreground='orange'>vol: </span><span foreground='green'>$1%</span>", 1, 'PCM')
 -- }}}
 
+-- {{{ cmus widget (bashets)
+cmus = widget({ type = "textbox", name = "cmus" })
+cmus.text = "<span foreground='orange'>cmus: </span><span foreground='green'>-</span>"
+-- }}}
+
 -- {{{ System tray
 systray = widget({ type = "systray" })
 -- }}}
@@ -194,6 +199,7 @@ for s = 1, screen.count() do
         separator, batwidget,
         separator, cpuwidget,
         separator, thermalwidget,
+        separator, cmus,
         layout = awful.widget.layout.horizontal.rightleft
     }
 end

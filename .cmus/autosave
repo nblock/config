@@ -1,4 +1,4 @@
-set aaa_mode=all
+set aaa_mode=artist
 set altformat_current= %F 
 set altformat_playlist= %f%= %d 
 set altformat_title=%f
@@ -61,7 +61,7 @@ set show_remaining_time=false
 set shuffle=true
 set softvol=false
 set softvol_state=100 100
-set status_display_program=
+set status_display_program=/home/flo/development/repo/cmus-notify/src/cmus-notify.py
 bind browser backspace browser-up
 bind browser i toggle show_hidden
 bind common + vol +10%
