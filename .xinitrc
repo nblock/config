@@ -3,7 +3,7 @@
 urxvtd -q -f -o
 eval "$(gpg-agent --daemon --sh)"
 setxkbmap -layout de,de -variant neo,basic -option -option grp:sclk_toggle -option grp_led:scroll
-awsetbg -c /home/flo/bilder/wallpaper/wispcat.jpg & 
+awsetbg /home/flo/bilder/wallpaper/1920x1080/arch_wall-by_kpolicano_1920x1080.jpg &
 xscreensaver -no-splash &
 
 DEFAULT_SESSION=awesome
