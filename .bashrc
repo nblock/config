@@ -33,6 +33,8 @@ alias clean='y -Qdt && y -Scc'
 alias hostip='curl icanhazip.com'
 alias su='su -'
 alias config='git --git-dir=$HOME/.config.git/ --work-tree=$HOME'
+alias vgaon='xrandr --output VGA-0 --auto && xrandr --output LVDS --off && awsetbg -R ~/bilder/wallpaper/1920x1080/'
+alias vgaoff='xrandr --output LVDS --auto && xrandr --output VGA-0 --off && awsetbg -R ~/bilder/wallpaper/1400x1050/'
 
 #sudo stuff
 complete -cf sudo
