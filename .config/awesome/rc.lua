@@ -432,7 +432,7 @@ client.add_signal("unfocus", function(c) c.border_color = beautiful.border_norma
 -- }}}
 
 -- {{{ Autostart
-os.execute("krandrtray &")
+--os.execute("krandrtray &")
 -- }}}
 
 -- vim: fdm=marker fdl=0 sts=4 ai
