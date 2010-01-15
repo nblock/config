@@ -2,7 +2,7 @@
 
 #newsbeuter via proxy
 #in this case -> privoxy (tor)
-use-proxy no
+use-proxy yes
 proxy localhost:8118
 download-retries 4
 download-timeout 45

@@ -388,7 +388,7 @@ awful.rules.rules = {
     properties = { tag = tags[1][4],switchtotag = true } },
     -- news
     { rule = { instance = "newsbeuter" },
-    properties = { tag = tags[1][5],switchtotag = true } },
+    properties = { tag = tags[1][5],switchtotag = false } },
     --file manager
     { rule = { class = "Dolphin" },
     properties = { tag = tags[1][6],switchtotag = true } },

@@ -77,7 +77,7 @@ function random()
 #wrapper for rdiff-backup
 function backup()
 {
-	TD=/mnt/flo/rdiff-backup
+	TD=/media/flo/rdiff-backup
 	BF=/home/flo/development/shelldev/backup-data
 	if [ -d $TD ]; then
 		sudo rdiff-backup -v 5 --include-globbing-filelist $BF / $TD
