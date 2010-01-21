@@ -46,3 +46,5 @@ set mouse=v	"kill fucking mouse shitbug
 
 "Will allow you to use :w!! to write to a file using sudo if you forgot to "sudo vim file" (it will prompt for sudo password when writing)
 cmap w!! %!sudo tee > /dev/null %
+
+colorscheme neon
