@@ -1,7 +1,7 @@
 #!/bin/sh
 # ~/.xinitrc
+eval "$(gpg-agent --daemon --log-file /home/flo/gpglog)"
 urxvtd -q -f -o
-eval "$(gpg-agent --daemon --sh)"
 setxkbmap -layout de,de -variant neo,basic -option -option grp:sclk_toggle -option grp_led:scroll
 awsetbg -R /home/flo/bilder/wallpaper/1920x1080/ &
 xscreensaver -no-splash &

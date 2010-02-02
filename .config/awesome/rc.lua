@@ -367,6 +367,8 @@ awful.rules.rules = {
     --floating apps
     { rule = { class = "pinentry-qt4" },
     properties = { floating = true } },
+    { rule = { class = "pinentry-gtk-2" },
+    properties = { floating = true } },
     { rule = { class = "Gimp" },
     properties = { floating = true } },
     --apptags
