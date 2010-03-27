@@ -1,4 +1,4 @@
-#newsbeuter 2.1 config - notizblock
+#newsbeuter 2.2 config - notizblock
 
 #newsbeuter via proxy
 #in this case -> privoxy (tor)
@@ -50,9 +50,8 @@ bind-key j down
 bind-key d save
 bind-key s sort
 bind-key S revsort
-
-#macro
-macro o open-in-browser ; toggle-article-read
+bind-key O open-in-browser
+bind-key o open-in-browser-and-mark-read
 
 #color config
 color background	red   	white

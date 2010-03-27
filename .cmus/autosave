@@ -1,4 +1,4 @@
-set aaa_mode=album
+set aaa_mode=artist
 set altformat_current= %F 
 set altformat_playlist= %f%= %d 
 set altformat_title=%f
@@ -30,6 +30,7 @@ set color_win_title_bg=blue
 set color_win_title_fg=lightyellow
 set confirm_run=true
 set continue=true
+set display_artist_sort_name=false
 set dsp.alsa.device=default
 set dsp.ao.buffer_size=8192
 set dsp.ao.driver=
@@ -38,8 +39,10 @@ set dsp.ao.wav_dir=/home/flo
 set dsp.oss.device=
 set format_current= %a - [%02n] %t - %l [%y] %= %F 
 set format_playlist= %-20a %02n. %t%= %y %d 
+set format_playlist_va= %-20A %3n. %t (%a)%= %y %d 
 set format_title=%a - %l - %t (%y)
 set format_trackwin= %02n. %t%= %y %d 
+set format_trackwin_va=%3n. %t (%a)%= %y %d 
 set id3_default_charset=ISO-8859-1
 set lib_sort=artist album discnumber tracknumber title filename
 set mixer.alsa.channel=PCM
@@ -52,13 +55,15 @@ set pl_sort=
 set play_library=true
 set play_sorted=false
 set repeat=true
+set repeat_current=false
 set replaygain=disabled
 set replaygain_limit=true
 set replaygain_preamp=6.000000
 set set_term_title=false
 set show_hidden=false
-set show_remaining_time=true
+set show_remaining_time=false
 set shuffle=true
+set smart_artist_sort=true
 set softvol=false
 set softvol_state=100 100
 set status_display_program=/home/flo/development/repo/cmus-notify/src/cmus-notify.py
