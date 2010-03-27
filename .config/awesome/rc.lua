@@ -151,6 +151,11 @@ cmus = widget({ type = "textbox", name = "cmus" })
 cmus.text = "<span foreground='orange'>cmus: </span><span foreground='green'>-</span>"
 -- }}}
 
+-- {{{ newsbeuter widget
+newsbeuter = widget({ type = "textbox", name = "newsbeuter" })
+newsbeuter.text = "<span foreground='orange'>newsbeuter: </span><span foreground='green'>-</span>"
+-- }}}
+
 -- {{{ System tray
 systray = widget({ type = "systray" })
 -- }}}
@@ -199,6 +204,7 @@ for s = 1, screen.count() do
         separator, batwidget,
         separator, cpuwidget,
         separator, thermalwidget,
+        separator, newsbeuter,
         separator, cmus,
         layout = awful.widget.layout.horizontal.rightleft
     }
