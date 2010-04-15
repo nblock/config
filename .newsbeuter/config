@@ -35,6 +35,8 @@ save-path "~/"		#where to save feeds
 #kill files
 #ignore-article "*" "title =~ \"CSI\""
 ignore-article "*" "title =~ \"more rss feeds from\""
+ignore-article "*" "title =~ \"[iI]P[ao]d\""
+ignore-article "*" "title =~ \"iPhone\""
 #ignore-article "*" "title =~ \"Obama\""
 
 #key bindings
