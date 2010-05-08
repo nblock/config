@@ -6,19 +6,14 @@ set showmode
 set showcmd
 set shiftwidth=1
 set autoindent
-
-"restore views
-"mkview
-"loadview
+set tabpagemax=15
+set sessionoptions=blank,buffers,curdir,folds,globals,help,localoptions,options,resize,tabpages,winsize,winpos
 
 "shortcuts
 nnoremap <F11> :TlistToggle<CR>
 autocmd FileType python map <F5> :w<CR>:!python "%"<CR>
-autocmd FileType python map <F6> :w<CR>:!./install.sh<CR>
 autocmd FileType tex map <F5> :w<CR>:!latexmk -pdf "%"<CR>
-autocmd FileType tex map <F6> :w<CR>:!latexmk -pdf finalreport.tex<CR>
-nnoremap <silent> <C-n><nobr> <wbr></nobr>:tabnext<CR>
-nnoremap <silent> <C-p><nobr> <wbr></nobr>:tabprevious<CR>
+map <F6> :w<CR>:make<CR>
 nnoremap <F2> :set invpaste paste?<CR>
 imap <F2> <C-O><F2>
 set pastetoggle=<F2>
@@ -47,4 +42,6 @@ set mouse=v	"kill fucking mouse shitbug
 "Will allow you to use :w!! to write to a file using sudo if you forgot to "sudo vim file" (it will prompt for sudo password when writing)
 cmap w!! %!sudo tee > /dev/null %
 
+"syntax and colorscheme related
+syntax on
 colorscheme neon

@@ -83,6 +83,7 @@ notify-program "~/bin/newsbeuter-notify.sh"
 notify-format "%n unread articles"
 
 #podbeuter
-download-path "~/download/podcasts"
+download-path "~/tmp"
 max-downloads 3
 bind-key z pb-cancel
+bind-key y pb-download
