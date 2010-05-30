@@ -13,7 +13,7 @@ set sessionoptions=blank,buffers,curdir,folds,globals,help,localoptions,options,
 nnoremap <F11> :TlistToggle<CR>
 autocmd FileType python map <F5> :w<CR>:!python "%"<CR>
 autocmd FileType tex map <F5> :w<CR>:!latexmk -pdf "%"<CR>
-map <F6> :w<CR>:make<CR>
+map <F6> :w<CR>:!make<CR>
 nnoremap <F2> :set invpaste paste?<CR>
 imap <F2> <C-O><F2>
 set pastetoggle=<F2>
