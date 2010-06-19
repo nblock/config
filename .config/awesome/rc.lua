@@ -56,7 +56,7 @@ layouts =
 local commands = {}
 commands.suspend = "sudo pm-suspend"
 commands.help = "touch ~/seppal"
-commands.lock = "xscreensaver-command --lock"
+commands.lock = "xlock -mode blank"
 commands.screenshot = "scrot -e 'mv $f ~/bilder/screenshots'"
 --audio stuff
 commands.raisevol = "amixer set PCM 2%+"
