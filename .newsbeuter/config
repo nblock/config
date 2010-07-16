@@ -17,7 +17,7 @@ refresh-on-startup yes
 user-agent "Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.0)"
 
 #various
-max-items 150		#number of feeds to hold in db
+max-items 200		#number of feeds to hold in db
 goto-next-feed yes
 #FF3.5 (requires config: browser.tabs.loadDivertedInBackground to be 'true')
 browser "firefox -new-tab %u > /dev/null 2>&1"
