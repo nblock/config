@@ -1,12 +1,23 @@
+#load arch default settings
 if [ -r /etc/profile ] ; then
 . /etc/profile
 fi
 
-#history
+#history config
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
+setopt HIST_IGNORE_SPACE	#commands with at least one space get ignored
+setopt INC_APPEND_HISTORY	#share history between sessions	
+setopt HIST_IGNORE_ALL_DUPS	#ignore history dups
+
+#colors
 eval `dircolors -b` 
+
+#stuff
+setopt autocd		#autocd into dirs
+setopt extendedglob	#use extended globbing
+setopt correctall	#use autocorrection for commands and args
 
 #environment variables
 export EDITOR=vim
@@ -26,6 +37,10 @@ export PS1=$'%{\e[0;32m%}%n%{\e[0m%}%{\e[1;34m%}@%{\e[1;31m%}%m %{\e[1;34m%}%~ %
 # auto extension alias
 alias -s txt=$EDITOR
 alias -s PKGBUILD=$EDITOR
+
+#no autocorrection for mv and cp
+alias mv='nocorrect mv'
+alias cp='nocorrect cp'
 
 #normal alias
 alias ls='ls --color=auto -F'
@@ -67,6 +82,9 @@ bindkey "\^H" backward-delete-word
 # completion in the middle of a line
 bindkey '^i' expand-or-complete-prefix
 bindkey '^R' history-incremental-search-backward
+
+#hashes
+hash -d 5=~/fh-hagenberg/5.semester
 
 
 #extract various files with x $arg
