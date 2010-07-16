@@ -15,9 +15,10 @@ setopt HIST_IGNORE_ALL_DUPS	#ignore history dups
 eval `dircolors -b` 
 
 #stuff
-setopt autocd		#autocd into dirs
-setopt extendedglob	#use extended globbing
-setopt correctall	#use autocorrection for commands and args
+setopt AUTOCD		#autocd into dirs
+setopt EXTENDEDGLOB	#use extended globbing
+setopt CORRECTALL	#use autocorrection for commands and args
+setopt NOBEEP		# avoid "beep"ing
 
 #environment variables
 export EDITOR=vim
@@ -82,9 +83,11 @@ bindkey "\^H" backward-delete-word
 # completion in the middle of a line
 bindkey '^i' expand-or-complete-prefix
 bindkey '^R' history-incremental-search-backward
+bindkey '\e[A' history-beginning-search-backward
+bindkey '\e[B' history-beginning-search-forward
 
 #hashes
-hash -d 5=~/fh-hagenberg/5.semester
+hash -d fh5=~/fh-hagenberg/5.semester
 
 
 #extract various files with x $arg
