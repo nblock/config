@@ -31,6 +31,9 @@ export GPG_TTY=`tty`
 autoload -U compinit
 compinit
 zstyle ':completion:*' menu select #menu driven autocomplete
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path ~/.zsh/cache
+zstyle ':completion:*' accept-exact '*(N)'
 
 #prompt setup (TODO: integrate git)
 export PS1=$'%{\e[0;32m%}%n%{\e[0m%}%{\e[1;34m%}@%{\e[1;31m%}%m %{\e[1;34m%}%~ %{\e[0m%}% %{\e[1;32m%}$ %{\e[1;37m%}%'
