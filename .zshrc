@@ -15,10 +15,12 @@ setopt HIST_IGNORE_ALL_DUPS	#ignore history dups
 eval `dircolors -b` 
 
 #stuff
-setopt AUTOCD		#autocd into dirs
-setopt EXTENDEDGLOB	#use extended globbing
-setopt CORRECTALL	#use autocorrection for commands and args
-setopt NOBEEP		# avoid "beep"ing
+setopt AUTOCD			#autocd into dirs
+setopt AUTO_PUSHD		#use automated directory stack
+setopt PUSHD_IGNORE_DUPS	#ignore directory stack dups
+setopt EXTENDEDGLOB		#use extended globbing
+setopt CORRECTALL		#use autocorrection for commands and args
+setopt NOBEEP			#avoid "beep"ing
 
 #environment variables
 export EDITOR=vim
@@ -136,3 +138,4 @@ function backup()
 		echo "$TD existiert nicht!"
 	fi
 }
+
