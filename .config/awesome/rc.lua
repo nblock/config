@@ -293,7 +293,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey }, "x", function ()
      awful.prompt.run({ prompt = "Run in Terminal: " }, promptbox[mouse.screen].widget,
      function (prog)
-      awful.util.spawn_with_shell(terminal .. " -name " .. prog .. " -e /bin/bash -c " .. prog)
+      awful.util.spawn_with_shell(terminal .. " -name " .. prog .. " -e /bin/zsh -c " .. prog)
      end)
     end)
 )
