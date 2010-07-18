@@ -3,21 +3,22 @@ if [ -r /etc/profile ] ; then
 . /etc/profile
 fi
 
-#history config
+#history and directory stack config
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
+DIRSTACKSIZE=100
 setopt HIST_IGNORE_SPACE	#commands with at least one space get ignored
 setopt INC_APPEND_HISTORY	#share history between sessions	
 setopt HIST_IGNORE_ALL_DUPS	#ignore history dups
+setopt AUTO_PUSHD		#use automated directory stack
+setopt PUSHD_IGNORE_DUPS	#ignore directory stack dups
 
 #colors
 eval `dircolors -b` 
 
 #stuff
 setopt AUTOCD			#autocd into dirs
-setopt AUTO_PUSHD		#use automated directory stack
-setopt PUSHD_IGNORE_DUPS	#ignore directory stack dups
 setopt EXTENDEDGLOB		#use extended globbing
 setopt CORRECTALL		#use autocorrection for commands and args
 setopt NOBEEP			#avoid "beep"ing
