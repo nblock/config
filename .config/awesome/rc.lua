@@ -80,8 +80,8 @@ for s = 1, screen.count() do
     -- Each screen has its own tag table.
     tags[s] = awful.tag({ 
      "1 download", "2 mail", "3 chat", 
-     "4 music", "5 news", "6 fm", 
-     7, 8, 9 }, s,
+     "4 music", "5 news", "6 web", 
+     "7 fm", 8, 9 }, s,
     {layouts[3], layouts[1], layouts[1], -- Tags: 1, 2, 3
      layouts[1], layouts[1], layouts[1], --       4, 5 ,6
      layouts[1], layouts[1], layouts[1]  --       7, 8, 9
@@ -380,11 +380,11 @@ awful.rules.rules = {
     --apptags
     --downloading stuff
     { rule = { class = "JDownloader" },
-    properties = { tag = tags[1][1],switchtotag = true } },
+    properties = { tag = tags[1][1],switchtotag = false } },
     { rule = { instance = "rtorrent" },
     properties = { tag = tags[1][1],switchtotag = false } },
     -- mail
-    { rule = { class = "Kmail" },
+    { rule = { class = "Kontact" },
     properties = { tag = tags[1][2],switchtotag = true } },
     --chat and stuff like that
     { rule = { class = "Choqok" },
@@ -393,16 +393,16 @@ awful.rules.rules = {
     properties = { tag = tags[1][3],switchtotag = false } },
     -- cmus
     { rule = { instance = "cmus" },
-    properties = { tag = tags[1][4],switchtotag = true } },
+    properties = { tag = tags[1][4],switchtotag = false } },
     -- news
     { rule = { instance = "newsbeuter" },
     properties = { tag = tags[1][5],switchtotag = false } },
     --file manager
     { rule = { class = "Dolphin" },
-    properties = { tag = tags[1][6],switchtotag = true } },
+    properties = { tag = tags[1][7],switchtotag = true } },
     --misc stuff
     { rule = { class = "Konqueror" },
-    properties = { tag = tags[1][9],switchtotag = true } },
+    properties = { tag = tags[1][6],switchtotag = true } },
 }
 -- }}}
 
