@@ -5,9 +5,12 @@ set ruler
 set showmode
 set showcmd
 set shiftwidth=1
-set autoindent
+set autoindent smartindent	"use smart indent
 set tabpagemax=15
 set sessionoptions=blank,buffers,curdir,folds,globals,help,localoptions,options,resize,tabpages,winsize,winpos
+set fileencoding=utf-8 encoding=utf-8
+set laststatus=2		"status line on
+set backspace=indent,eol,start	"more flexible backspace
 
 "shortcuts
 nnoremap <F11> :TlistToggle<CR>
