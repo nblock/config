@@ -29,6 +29,8 @@ export BROWSER=firefox
 export LANG=de_AT.UTF-8
 export TERM=rxvt-unicode
 export GPG_TTY=`tty`
+PATH=$HOME/bin:$PATH
+typeset -U PATH
 
 #autocompletion
 autoload -U compinit
