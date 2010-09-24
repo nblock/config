@@ -47,6 +47,10 @@ set mouse=v	"kill fucking mouse shitbug
 "Will allow you to use :w!! to write to a file using sudo if you forgot to "sudo vim file" (it will prompt for sudo password when writing)
 cmap w!! %!sudo tee > /dev/null %
 
+"vim-pydiction
+filetype plugin on
+let g:pydiction_location = '/usr/share/pydiction/complete-dict'
+
 "syntax and colorscheme related
 syntax on
 colorscheme neon
