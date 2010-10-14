@@ -384,7 +384,7 @@ awful.rules.rules = {
     { rule = { instance = "rtorrent" },
     properties = { tag = tags[1][1],switchtotag = false } },
     -- mail
-    { rule = { class = "Kontact" },
+    { rule = { class = "Thunderbird" },
     properties = { tag = tags[1][2],switchtotag = true } },
     --chat and stuff like that
     { rule = { class = "Choqok" },

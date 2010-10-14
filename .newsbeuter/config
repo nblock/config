@@ -37,6 +37,7 @@ save-path "~/"		#where to save feeds
 ignore-article "*" "title =~ \"more rss feeds from\""
 ignore-article "*" "title =~ \"[iI]P[ao]d\""
 ignore-article "*" "title =~ \"iPhone\""
+ignore-article "*" "title =~ \"Windows Phone 7\""
 #ignore-article "*" "title =~ \"Obama\""
 
 #key bindings
