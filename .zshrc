@@ -37,11 +37,11 @@ typeset -U PATH
 autoload -U colors && colors
 
 #set color vars
-for COLOR in RED GREEN BLUE YELLOW WHITE BLACK CYAN; do
+for COLOR in RED GREEN BLUE YELLOW; do
     eval CN_$COLOR='%{$fg[${(L)COLOR}]%}'         
     eval CB_$COLOR='%{$fg_bold[${(L)COLOR}]%}'
 done                                                 
-PR_RESET="%{${reset_color}%}";
+C_RESET="%{${reset_color}%}";
 
 #autocompletion
 autoload -U compinit
@@ -53,33 +53,21 @@ zstyle ':completion:*' accept-exact '*(N)'
 
 #version control info 
 autoload -Uz vcs_info
-zstyle ':vcs_info:*' stagedstr '%F{green}●%f'
-zstyle ':vcs_info:*' unstagedstr '%F{yellow}●%f'
-zstyle ':vcs_info:*' check-for-changes true
-zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b%F{red}:%f%F{yellow}%r%f'
 zstyle ':vcs_info:*' enable git svn
-precmd () {
-	if [[ -z $(git ls-files --other --exclude-standard 2> /dev/null) ]] {
-		zstyle ':vcs_info:*' formats '%F{cyan}[%b%c%u%f%F{cyan}]%f'
-	} else {
-		zstyle ':vcs_info:*' formats '%F{cyan}[%b%c%u%f%F{red}●%f%F{cyan}]%f'
-	}
- 
-	vcs_info
-}
+zstyle ':vcs_info:*' check-for-changes true
+zstyle ':vcs_info:*' unstagedstr "${CN_RED}▶"   #red sign if there are unstaged changes
+zstyle ':vcs_info:*' stagedstr "${CN_YELLOW}▶"  #yellow sign if there are staged changes
+zstyle ':vcs_info:*' formats "${CN_GREEN}%s${CB_BLUE}@${CB_RED}%b${C_RESET}"
+zstyle ':vcs_info:(git):*' formats "${CN_GREEN}%s${CB_BLUE}@${CB_RED}%b${CN_BLUE}:${CB_RED}%u%c${C_RESET}"
+zstyle ':vcs_info:*' branchformats "%b:%r"
+function precmd {       
+    vcs_info 'prompt'          
+} 
 
 ### My default prompt
-#PROMPT=$'%{\e[0;32m%}%n%{\e[0m%}%{\e[1;34m%}@%{\e[1;31m%}%m %{\e[1;34m%}%~ %{\e[0m%}% %{\e[1;32m%}$ %{\e[1;37m%}%'
-PROMPT=$'${CN_GREEN}%n${CB_BLUE}@${CB_RED}%m ${CN_BLUE}%~ ${CB_GREEN}$ ${PR_RESET}'
-
+PROMPT=$'${CN_GREEN}%n${CB_BLUE}@${CB_RED}%m ${CN_BLUE}%~ ${CB_GREEN}$ ${C_RESET}'
 RPROMPT='${vcs_info_msg_0_}'
-#RPROMPT='${vcs_info_msg_0_} %(!.%F{red}$(prompt_char)%f.$(prompt_char))'
 
-#PROMPT='%(!.%B%U%F{blue}%n%f%u%b.%F{blue}%n%f) at %F{magenta}%m%f on %F{yellow}%y%f in %F{cyan}%~%f
-#{${vcs_info_msg_0_} %(!.%F{red}$(prompt_char)%f.$(prompt_char)) }: %{$reset_color%}'
-### My default prompt's right side
-#PROMPT='%F{cyan}%D{%e.%b.%y %H.%M}%f%{$reset_color%}'
- 
 ### My prompt for loops
 PROMPT2='{%_}  '
  
@@ -88,8 +76,6 @@ PROMPT3='{ … }  '
  
 ### So far I don't use "setopt xtrace", so I don't need this prompt
 PROMPT4=''
-
-
 
 # auto extension alias
 alias -s txt=$EDITOR
