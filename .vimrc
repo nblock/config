@@ -16,7 +16,7 @@ set backspace=indent,eol,start	"more flexible backspace
 
 "shortcuts
 nnoremap <F11> :TlistToggle<CR>
-autocmd FileType python map <F5> :w<CR>:!python "%"<CR>
+autocmd FileType python map <F5> :w<CR>:!python2 "%"<CR>
 autocmd FileType tex map <F5> :w<CR>:!latexmk -pdf "%"<CR>
 map <F6> :w<CR>:!make<CR>
 nnoremap <F2> :set invpaste paste?<CR>
@@ -51,6 +51,7 @@ cmap w!! %!sudo tee > /dev/null %
 filetype plugin on
 let g:pydiction_location = '/usr/share/pydiction/complete-dict'
 
-"syntax and colorscheme related
+"syntax, 256 colors, colorscheme
 syntax on
+set t_Co=256
 colorscheme neon
