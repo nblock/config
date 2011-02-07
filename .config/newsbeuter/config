@@ -1,4 +1,4 @@
-#newsbeuter 2.2 config - notizblock
+#newsbeuter 2.4 config - notizblock
 
 #newsbeuter via proxy
 #in this case -> privoxy (tor)
@@ -27,13 +27,11 @@ cleanup-on-quit yes	#cleanup is always nice
 show-read-feeds no	#list read feeds ? 
 show-read-articles no	#list read articles ?
 
-#files
-cache-file "~/.newsbeuter/cache.db"
-error-log  "~/.newsbeuter/error.log"
+#files (~/.local/share/newsbeuter and ~/.config/newsbeuter)
 save-path "~/"		#where to save feeds
 
 #kill files
-#ignore-article "*" "title =~ \"CSI\""
+ignore-article "*" "title =~ \"CSI\""
 ignore-article "*" "title =~ \"more rss feeds from\""
 ignore-article "*" "title =~ \"[iI]P[ao]d\""
 ignore-article "*" "title =~ \"iPhone\""
