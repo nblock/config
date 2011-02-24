@@ -12,19 +12,23 @@ set encoding=utf-8
 set termencoding=utf-8
 set backspace=indent,eol,start	"more flexible backspace
 set mouse=a			"enable mouse usage in all modes
+set incsearch			"jump to match during searching
+set hlsearch			"highlight search
+set ttyfast			"fast terminal connection
 
 "statusline
 set laststatus=2
 set statusline=%<%F\ %h%m%r%=[type=%Y\ %{&ff}]\ %=%{\"[\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"]\ \"}%k\ %-14.(%l/%L,%c%V%)\ %P
 
 "shortcuts
-nnoremap <F11> :TlistToggle<CR>
-autocmd FileType python map <F5> :w<CR>:!python2 "%"<CR>
-autocmd FileType tex map <F5> :w<CR>:!latexmk -pdf "%"<CR>
-map <F6> :w<CR>:!make<CR>
 nnoremap <F2> :set invpaste paste?<CR>
 imap <F2> <C-O><F2>
 set pastetoggle=<F2>
+map <F3> :nohlsearch<CR>
+autocmd FileType python map <F5> :w<CR>:!python2 "%"<CR>
+autocmd FileType tex map <F5> :w<CR>:!latexmk -pdf "%"<CR>
+map <F6> :w<CR>:!make<CR>
+nnoremap <F11> :TlistToggle<CR>
 
 "folding for python
 autocmd FileType python setlocal foldmethod=indent
