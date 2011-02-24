@@ -3,7 +3,7 @@ Arch Linux Configs
 
 Clean
 =============
-![Arch 2011-02-24](http://ompldr.org/tN2poYg)
+![Arch 2011-02-24](http://ompldr.org/vN2poYg)
 <p>[Full Version](http://ompldr.org/vN2poYg)</p>
 
 Dirty
