@@ -152,12 +152,12 @@ vicious.register(volwidget, vicious.widgets.volume, "<span foreground='orange'>v
 
 -- {{{ cmus widget
 cmus = widget({ type = "textbox", name = "cmus" })
-cmus.text = "<span foreground='orange'>cmus: </span><span foreground='green'>-</span>"
+cmus.text = "<span foreground='orange'>music: </span><span foreground='green'>-</span>"
 -- }}}
 
 -- {{{ newsbeuter widget
 newsbeuter = widget({ type = "textbox", name = "newsbeuter" })
-newsbeuter.text = "<span foreground='orange'>newsbeuter: </span><span foreground='green'>-</span>"
+newsbeuter.text = "<span foreground='orange'>news: </span><span foreground='green'>-</span>"
 -- }}}
 
 -- {{{ System tray
