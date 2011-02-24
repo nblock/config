@@ -3,19 +3,29 @@ set nowritebackup
 set noswapfile
 set showmode
 set showcmd
-set shiftwidth=1
-set autoindent smartindent	"use smart indent
-set tabpagemax=15
+set showmatch			"show matching brackets (),{},[]
+set mat=3               	"show matching brackets for 0.3 seconds
 set sessionoptions=blank,buffers,curdir,folds,globals,help,localoptions,options,resize,tabpages,winsize,winpos
-set fileencoding=utf-8
 set encoding=utf-8
+set fileencoding=utf-8
 set termencoding=utf-8
 set backspace=indent,eol,start	"more flexible backspace
 set mouse=a			"enable mouse usage in all modes
 set incsearch			"jump to match during searching
 set hlsearch			"highlight search
 set ttyfast			"fast terminal connection
-set cursorline			"draw a line to spot the cursor
+
+"use a terminal title
+set title
+set titlestring=%F\ [vim]
+
+" tab settings
+set tabstop=2                     " tab character amount
+set expandtab                     " tabs as space
+set autoindent
+set smartindent                   " smart autoindenting on a new line
+set shiftwidth=2                  " set spaces for autoindent
+set softtabstop=2
 
 "statusline
 set laststatus=2
