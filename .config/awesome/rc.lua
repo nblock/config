@@ -25,8 +25,7 @@ local exec   = awful.util.spawn
 local sexec  = awful.util.spawn_with_shell
 
 -- Themes define colours, icons, and wallpapers
-beautiful.init(home .. "/.config/awesome/zenburn/theme.lua")
--- beautiful.init(home .. "/.config/awesome/zenburn.lua")
+beautiful.init(home .. "/.config/awesome/zenburn.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "urxvtc"
