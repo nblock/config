@@ -273,24 +273,24 @@ root.buttons(awful.util.table.join(
 -- {{{ Key bindings
 globalkeys = awful.util.table.join(
     --user defined
-    awful.key({}, "XF86PowerOff", function() awful.util.spawn_with_shell(commands.suspend) end ),
-    awful.key({ modkey,           }, "F12",   function () awful.util.spawn_with_shell(commands.lock) end),
+    awful.key({}, "XF86PowerOff", function() sexec(commands.suspend) end ),
+    awful.key({ modkey,           }, "F12",   function () sexec(commands.lock) end),
     --audio stuff
-    awful.key({}, "XF86AudioMute", function() awful.util.spawn_with_shell(commands.mute) end ),
-    awful.key({}, "XF86AudioRaiseVolume", function() awful.util.spawn_with_shell(commands.raisevol) end ),
-    awful.key({}, "XF86AudioLowerVolume", function() awful.util.spawn_with_shell(commands.lowervol) end ),
-    awful.key({}, "XF86AudioNext", function() awful.util.spawn_with_shell(commands.cmusnext) end ),
-    awful.key({}, "XF86AudioPrev", function() awful.util.spawn_with_shell(commands.cmusprev) end ),
-    awful.key({}, "XF86AudioPlay", function() awful.util.spawn_with_shell(commands.cmuspause) end ),
-    awful.key({}, "XF86Tools", function() awful.util.spawn_with_shell(commands.cmusplay) end ),
-    awful.key({}, "XF86Calculator", function() awful.util.spawn_with_shell(commands.calc) end ),
-    awful.key({}, "Print", function() awful.util.spawn_with_shell(commands.screenshot) end ),
+    awful.key({}, "XF86AudioMute", function() sexec(commands.mute) end ),
+    awful.key({}, "XF86AudioRaiseVolume", function() sexec(commands.raisevol) end ),
+    awful.key({}, "XF86AudioLowerVolume", function() sexec(commands.lowervol) end ),
+    awful.key({}, "XF86AudioNext", function() sexec(commands.cmusnext) end ),
+    awful.key({}, "XF86AudioPrev", function() sexec(commands.cmusprev) end ),
+    awful.key({}, "XF86AudioPlay", function() sexec(commands.cmuspause) end ),
+    awful.key({}, "XF86Tools", function() sexec(commands.cmusplay) end ),
+    awful.key({}, "XF86Calculator", function() sexec(commands.calc) end ),
+    awful.key({}, "Print", function() sexec(commands.screenshot) end ),
 
-   -- awful.key({}, "XF86MyComputer", function() awful.util.spawn_with_shell(commands.fileman) end ),
-   -- awful.key({}, "XF86Mail", function() awful.util.spawn_with_shell(commands.mail) end ),
-   -- awful.key({}, "XF86HomePage", function() awful.util.spawn_with_shell(commands.browser) end ),
-   -- awful.key({}, "XF86Sleep", function() awful.util.spawn_with_shell(commands.lock) end ),
-   -- awful.key({"Control", "Mod1"}, "l", function() awful.util.spawn_with_shell(commands.lock) end ),
+   -- awful.key({}, "XF86MyComputer", function() sexec(commands.fileman) end ),
+   -- awful.key({}, "XF86Mail", function() sexec(commands.mail) end ),
+   -- awful.key({}, "XF86HomePage", function() sexec(commands.browser) end ),
+   -- awful.key({}, "XF86Sleep", function() sexec(commands.lock) end ),
+   -- awful.key({"Control", "Mod1"}, "l", function() sexec(commands.lock) end ),
 
     --default bindings
     awful.key({ modkey,           }, "Left",   awful.tag.viewprev       ),
@@ -324,7 +324,7 @@ globalkeys = awful.util.table.join(
         end),
 
     -- Standard program
-    awful.key({ modkey,           }, "Return", function () awful.util.spawn(terminal) end),
+    awful.key({ modkey,           }, "Return", function () exec(terminal) end),
     awful.key({ modkey, "Control" }, "r", awesome.restart),
     awful.key({ modkey, "Shift"   }, "q", awesome.quit),
     awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)    end),
@@ -342,7 +342,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey }, "x", function ()
      awful.prompt.run({ prompt = "Run in Terminal: " }, promptbox[mouse.screen].widget,
      function (prog)
-      awful.util.spawn_with_shell(terminal .. " -name " .. prog .. " -e /bin/zsh -c " .. prog)
+      sexec(terminal .. " -name " .. prog .. " -e /bin/zsh -c " .. prog)
      end)
     end)
 )
