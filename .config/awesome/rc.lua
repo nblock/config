@@ -118,6 +118,7 @@ spacer.text    = " "
 separator.text = " <span foreground='red'>•</span> "
 -- }}}
 
+
 -- {{{ CPU load 
 local cpuwidget = widget({ type = "textbox" })
 vicious.register(cpuwidget, vicious.widgets.cpu, "<span foreground='orange'>load: </span><span foreground='green'>$2%</span><span foreground='orange'> - </span><span foreground='green'>$3%</span>")
@@ -174,6 +175,42 @@ taglist.buttons = awful.util.table.join(
                     awful.button({ }, 4, awful.tag.viewnext),
                     awful.button({ }, 5, awful.tag.viewprev))
 
+local tasklist = {}
+tasklist.buttons = awful.util.table.join(
+		awful.button({ }, 1,
+			function(c)
+				if not c:isvisible() then
+					awful.tag.viewonly(c:tags()[1])
+				end
+				client.focus = c
+				c:raise()
+			end),
+		 awful.button({ }, 3,
+			function()
+				if instance then
+					instance:hide()
+					instance = nil
+				else
+					instance = awful.menu.clients({ width = 250 })
+				end
+			end),
+		 awful.button({ }, 4,
+			function()
+				awful.client.focus.byidx(1)
+				if client.focus then
+					client.focus:raise()
+				end
+			end),
+		 awful.button({ }, 5,
+			function()
+				awful.client.focus.byidx(-1)
+				if client.focus then
+					client.focus:raise()
+				end
+		end)
+)
+
+
 for s = 1, screen.count() do
     -- Create a promptbox
     promptbox[s] = awful.widget.prompt({ layout = awful.widget.layout.horizontal.leftright })
@@ -188,6 +225,15 @@ for s = 1, screen.count() do
 
     -- Create a taglist widget
     taglist[s] = awful.widget.taglist(s, awful.widget.taglist.label.all, taglist.buttons)
+
+    -- Create a tasklist widget
+    tasklist[s] = awful.widget.tasklist(
+	  	  function(c)
+    		      return awful.widget.tasklist.label.currenttags(c, s)
+		  end,
+		  tasklist.buttons
+    )
+
     -- Create the wibox
     wibox[s] = awful.wibox({
         position = "top", screen = s,
@@ -206,6 +252,7 @@ for s = 1, screen.count() do
         separator, thermalwidget,
         separator, newsbeuter,
         separator, cmus,
+	separator, tasklist[s],
         layout = awful.widget.layout.horizontal.rightleft
     }
 end

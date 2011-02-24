@@ -1,4 +1,4 @@
-set aaa_mode=album
+set aaa_mode=artist
 set altformat_current= %F 
 set altformat_playlist= %f%= %d 
 set altformat_title=%f
@@ -49,6 +49,7 @@ set mixer.alsa.channel=PCM
 set mixer.alsa.device=default
 set mixer.oss.channel=PCM
 set mixer.oss.device=
+set mixer.pulse.restore_volume=1
 set output_plugin=alsa
 set passwd=
 set pl_sort=
