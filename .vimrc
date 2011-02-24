@@ -1,7 +1,6 @@
 set nobackup
 set nowritebackup
 set noswapfile
-set ruler
 set showmode
 set showcmd
 set shiftwidth=1
@@ -11,8 +10,12 @@ set sessionoptions=blank,buffers,curdir,folds,globals,help,localoptions,options,
 set fileencoding=utf-8
 set encoding=utf-8
 set termencoding=utf-8
-set laststatus=2		"status line on
 set backspace=indent,eol,start	"more flexible backspace
+set mouse=a			"enable mouse usage in all modes
+
+"statusline
+set laststatus=2
+set statusline=%<%F\ %h%m%r%=[type=%Y\ %{&ff}]\ %=%{\"[\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"]\ \"}%k\ %-14.(%l/%L,%c%V%)\ %P
 
 "shortcuts
 nnoremap <F11> :TlistToggle<CR>
@@ -41,8 +44,6 @@ endf
 
 map <F7> :call MySpellLang()<CR>
 imap <F7> <C-o>:call MySpellLang()<CR>
-
-set mouse=v	"kill fucking mouse shitbug
 
 "Will allow you to use :w!! to write to a file using sudo if you forgot to "sudo vim file" (it will prompt for sudo password when writing)
 cmap w!! %!sudo tee > /dev/null %
