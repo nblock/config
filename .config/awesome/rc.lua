@@ -1,5 +1,5 @@
 -- {{{ License
--- rc.lua, works with awesome 3.4.2 (Arch Linux)
+-- rc.lua, works with awesome 3.4.9 (Arch Linux)
 -- author: nblock <nblock [at] archlinux.us>
 -- based on multiple rc.lua files from different awesome users
 --
@@ -55,7 +55,6 @@ layouts =
 -- some commands
 local commands = {}
 commands.suspend = "sudo pm-suspend"
-commands.help = "touch ~/seppal"
 commands.lock = "xlock -mode blank"
 commands.screenshot = "scrot -e 'mv $f ~/bilder/screenshots'"
 --audio stuff
@@ -271,7 +270,6 @@ root.buttons(awful.util.table.join(
 globalkeys = awful.util.table.join(
     --user defined
     awful.key({}, "XF86PowerOff", function() awful.util.spawn_with_shell(commands.suspend) end ),
-    awful.key({}, "Help", function() awful.util.spawn_with_shell(commands.help) end ),
     awful.key({ modkey,           }, "F12",   function () awful.util.spawn_with_shell(commands.lock) end),
     --audio stuff
     awful.key({}, "XF86AudioMute", function() awful.util.spawn_with_shell(commands.mute) end ),
