@@ -3,33 +3,34 @@ set nowritebackup
 set noswapfile
 set showmode
 set showcmd
-set showmatch			"show matching brackets (),{},[]
-set mat=3               	"show matching brackets for 0.3 seconds
+set showmatch         "show matching brackets (),{},[]
+set mat=3             "show matching brackets for 0.3 seconds
 set sessionoptions=blank,buffers,curdir,folds,globals,help,localoptions,options,resize,tabpages,winsize,winpos
 set encoding=utf-8
 set fileencoding=utf-8
 set termencoding=utf-8
 set backspace=indent,eol,start	"more flexible backspace
-set mouse=a			"enable mouse usage in all modes
-set incsearch			"jump to match during searching
-set hlsearch			"highlight search
-set ttyfast			"fast terminal connection
+set mouse=a			      "enable mouse usage in all modes
+set incsearch			    "jump to match during searching
+set hlsearch			    "highlight search
+set ttyfast			      "fast terminal connection
+"set lazyredraw        "don't redraw while running macros
 
 "use a terminal title
 set title
 set titlestring=%F\ [vim]
 
 " tab settings
-set tabstop=2                     " tab character amount
-set expandtab                     " tabs as space
+set tabstop=2         "tab character amount
+set expandtab         "tabs as space
 set autoindent
-set smartindent                   " smart autoindenting on a new line
-set shiftwidth=2                  " set spaces for autoindent
+set smartindent       "smart autoindenting on a new line
+set shiftwidth=2      "set spaces for autoindent
 set softtabstop=2
 
 "statusline
 set laststatus=2
-set statusline=%<%F\ %h%m%r%=[type=%Y\ %{&ff}]\ %=%{\"[\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"]\ \"}%k\ %-14.(%l/%L,%c%V%)\ %P
+set statusline=%<%F\ %h%m%r%=%k\ %-10.(%l/%L,%c%V%)\ %P\ [%{&encoding}:%{&fileformat}]%(\ %w%)\ %y
 
 "shortcuts
 nnoremap <F2> :set invpaste paste?<CR>
@@ -39,6 +40,8 @@ map <F3> :nohlsearch<CR>
 autocmd FileType python map <F5> :w<CR>:!python2 "%"<CR>
 autocmd FileType tex map <F5> :w<CR>:!latexmk -pdf "%"<CR>
 map <F6> :w<CR>:!make<CR>
+vmap <F9> :!xclip -f -sel clip<CR>
+map <F10> :-1r !xclip -o -sel clip<CR>
 nnoremap <F11> :TlistToggle<CR>
 
 "folding for python
@@ -62,6 +65,8 @@ imap <F7> <C-o>:call MySpellLang()<CR>
 
 "Will allow you to use :w!! to write to a file using sudo if you forgot to "sudo vim file" (it will prompt for sudo password when writing)
 cmap w!! %!sudo tee > /dev/null %
+
+let g:tex_flavor = "latex"  "assume latex
 
 "vim-pydiction
 filetype plugin on
