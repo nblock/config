@@ -15,6 +15,7 @@ set mouse=a			"enable mouse usage in all modes
 set incsearch			"jump to match during searching
 set hlsearch			"highlight search
 set ttyfast			"fast terminal connection
+set cursorline			"draw a line to spot the cursor
 
 "statusline
 set laststatus=2
