@@ -77,10 +77,6 @@ always-download "http://www.movie-blog.org/feed/rss"
 #reset unread flag when feed gets updated after reading
 reset-unread-on-update "http://blog.fefe.de/rss.xml?html"
 
-#notification
-notify-program "~/bin/newsbeuter-notify.sh"
-notify-format "%n unread articles"
-
 #podbeuter
 download-path "~/tmp"
 max-downloads 3

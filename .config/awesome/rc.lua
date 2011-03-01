@@ -155,11 +155,6 @@ cmus = widget({ type = "textbox", name = "cmus" })
 cmus.text = "<span foreground='orange'>music: </span><span foreground='green'>-</span>"
 -- }}}
 
--- {{{ newsbeuter widget
-newsbeuter = widget({ type = "textbox", name = "newsbeuter" })
-newsbeuter.text = "<span foreground='orange'>news: </span><span foreground='green'>-</span>"
--- }}}
-
 -- {{{ System tray
 systray = widget({ type = "systray" })
 -- }}}
@@ -253,7 +248,6 @@ for s = 1, screen.count() do
         separator, batwidget,
         separator, cpuwidget,
         separator, thermalwidget,
-        separator, newsbeuter,
         separator, cmus,
 	separator, tasklist[s],
         layout = awful.widget.layout.horizontal.rightleft
@@ -449,9 +443,6 @@ awful.rules.rules = {
     --file manager
     { rule = { class = "Dolphin" },
     properties = { tag = tags[1][7],switchtotag = true } },
-    --misc stuff
-    { rule = { class = "Konqueror" },
-    properties = { tag = tags[1][6],switchtotag = true } },
 }
 -- }}}
 
