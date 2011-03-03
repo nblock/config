@@ -129,7 +129,7 @@ vicious.register(cpuwidget, vicious.widgets.cpu, "<span foreground='orange'>load
  
 -- {{{ CPU temperature
 local thermalwidget  = widget({ type = "textbox" })
-vicious.register(thermalwidget, vicious.widgets.thermal, "<span foreground='orange'>temp: </span><span foreground='green'>$1°C</span>", 20, "thermal_zone1")
+vicious.register(thermalwidget, vicious.widgets.thermal, "<span foreground='orange'>temp: </span><span foreground='green'>$1°C</span>", 20, "thermal_zone0")
 -- }}}
 
 -- {{{ Battery state

@@ -32,10 +32,6 @@ set confirm_run=true
 set continue=true
 set display_artist_sort_name=false
 set dsp.alsa.device=default
-set dsp.ao.buffer_size=8192
-set dsp.ao.driver=
-set dsp.ao.wav_counter=1
-set dsp.ao.wav_dir=/home/flo
 set dsp.oss.device=
 set format_current= %a - [%02n] %t - %l [%y] %= %F 
 set format_playlist= %-20a %02n. %t%= %y %d 
