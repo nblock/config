@@ -55,25 +55,6 @@ layouts =
     awful.layout.suit.magnifier,	--11
     awful.layout.suit.floating		--12
 }
-
--- some commands
-local commands = {}
-commands.suspend = "sudo pm-suspend"
-commands.lock = "xlock -mode blank"
-commands.screenshot = "scrot -e 'mv $f ~/bilder/screenshots'"
---audio stuff
-commands.raisevol = "amixer set PCM 2%+"
-commands.lowervol = "amixer set PCM 2%-"
-commands.mute = "amixer sset PCM toggle"
-commands.cmusnext = "cmus-remote --next"
-commands.cmusprev = "cmus-remote --prev"
-commands.cmuspause = "cmus-remote --pause"
-commands.cmusplay = "cmus-remote --play"
-commands.calc = "krunner"
---todo
-commands.fileman = "pcmanfm"
-commands.calc = "xcalc"
-commands.browser = "firefox"
 -- }}}
 
 -- {{{ Tags
@@ -266,28 +247,21 @@ root.buttons(awful.util.table.join(
 
 -- {{{ Key bindings
 globalkeys = awful.util.table.join(
-    --user defined
-    awful.key({}, "XF86PowerOff", function() sexec("sudo shutdown -h now") end ),   --power button
-    --audio stuff
-    awful.key({}, "XF86AudioMute", function() sexec(commands.mute) end ),
-    awful.key({}, "XF86AudioRaiseVolume", function() sexec(commands.raisevol) end ),
-    awful.key({}, "XF86AudioLowerVolume", function() sexec(commands.lowervol) end ),
-    awful.key({}, "XF86AudioNext", function() sexec(commands.cmusnext) end ),
-    awful.key({}, "XF86AudioPrev", function() sexec(commands.cmusprev) end ),
-    awful.key({}, "XF86AudioPlay", function() sexec(commands.cmuspause) end ),
-    awful.key({}, "XF86Tools", function() sexec(commands.cmusplay) end ),
-    awful.key({}, "XF86Calculator", function() sexec(commands.calc) end ),
-
+    awful.key({}, "XF86PowerOff", function() sexec("sudo pm-suspend") end ),                   --power button
+    awful.key({}, "XF86AudioMute", function() sexec("amixer sset PCM toggle") end ),
+    awful.key({}, "XF86AudioRaiseVolume", function() sexec("amixer set PCM 2%+") end ),
+    awful.key({}, "XF86AudioLowerVolume", function() sexec("amixer set PCM 2%-") end ),
+    awful.key({}, "XF86AudioNext", function() sexec("cmus-remote --next") end ),
+    awful.key({}, "XF86AudioPrev", function() sexec("cmus-remote --prev") end ),
+    awful.key({}, "XF86AudioPlay", function() sexec("cmus-remote --pause") end ),
+    awful.key({}, "XF86AudioStop", function() sexec("scrot -e 'mv $f ~/bilder/screenshots'") end ), --fn - up
+    awful.key({}, "XF86Tools", function() sexec("") end ),
+    awful.key({}, "XF86Calculator", function() sexec("") end ),
     awful.key({}, "XF86Launch1", function() sexec("") end ),    --ThinkVantage
-    awful.key({}, "XF86ScreenSaver", function() sexec("xlock -mode blank") end ), --fn-f2
-    awful.key({}, "XF86Sleep", function() sexec("sudo pm-suspend") end ), --fn-f4
-
-
-
-    --awful.key({}, "248", function() sexec("touch ~/111111") end ),
-    --awful.key({}, 248, function() sexec("touch ~/111111") end ),
-    awful.key({}, "Print", function() sexec(commands.screenshot) end ),
-
+    awful.key({}, "XF86ScreenSaver", function() sexec("xlock -mode blank") end ),                   --fn - f2
+    awful.key({}, "XF86Sleep", function() sexec("sudo pm-suspend") end ),                           --fn - f4
+    awful.key({}, "XF86Display", function() sexec("") end ),                       --fn - f7
+    awful.key({}, "XF86TouchpadToggle", function() sexec("~/bin/touchpad-toggle.sh") end ),         --fn - f8
    -- awful.key({}, "XF86MyComputer", function() sexec(commands.fileman) end ),
    -- awful.key({}, "XF86Mail", function() sexec(commands.mail) end ),
    -- awful.key({}, "XF86HomePage", function() sexec(commands.browser) end ),
