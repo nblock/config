@@ -137,7 +137,7 @@ vicious.register(thermalwidget, vicious.widgets.thermal, "<span foreground='oran
 -- baticon       = widget({ type = "imagebox", name = "baticon" })
 -- baticon.image = image(beautiful.widget_bat)
 local batwidget     = widget({ type = "textbox" })
-vicious.register(batwidget, vicious.widgets.bat, "<span foreground='orange'>bat: </span><span foreground='green'>$1$2%</span>", 60, "C1C5")
+vicious.register(batwidget, vicious.widgets.bat, "<span foreground='orange'>bat: </span><span foreground='green'>$1$2%</span>", 60, "BAT0")
 -- }}}
 
 -- {{{ Date and time
