@@ -432,7 +432,7 @@ awful.rules.rules = {
     --chat and stuff like that
     { rule = { class = "Choqok" },
     properties = { tag = tags[1][3],switchtotag = false } },
-    { rule = { class = "Kopete" },
+    { rule = { class = "Pidgin" },
     properties = { tag = tags[1][3],switchtotag = false } },
     -- cmus
     { rule = { instance = "cmus" },
