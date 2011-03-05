@@ -5,6 +5,7 @@ urxvtd -q -f -o
 ck-launch-session nm-applet &
 #setxkbmap -layout de,de -variant neo,basic -option -option grp:sclk_toggle -option grp_led:scroll
 #awsetbg -R /home/flo/bilder/wallpaper/1920x1080/ &
+xmodmap .Xmodmap
 
 DEFAULT_SESSION=awesome
 case $1 in
