@@ -124,7 +124,7 @@ separator.text = " <span foreground='red'>•</span> "
 
 -- {{{ CPU load 
 local cpuwidget = widget({ type = "textbox" })
-vicious.register(cpuwidget, vicious.widgets.cpu, "<span foreground='orange'>load: </span><span foreground='green'>$2%</span><span foreground='orange'> - </span><span foreground='green'>$3%</span>")
+vicious.register(cpuwidget, vicious.widgets.cpu, "<span foreground='orange'>load: </span><span foreground='green'>$2%</span><span foreground='orange'> - </span><span foreground='green'>$3%</span><span foreground='orange'> - </span><span foreground='green'>$4%</span><span foreground='orange'> - </span><span foreground='green'>$5%</span>")
 -- }}}
  
 -- {{{ CPU temperature
