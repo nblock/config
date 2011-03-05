@@ -267,8 +267,7 @@ root.buttons(awful.util.table.join(
 -- {{{ Key bindings
 globalkeys = awful.util.table.join(
     --user defined
-    awful.key({}, "XF86PowerOff", function() sexec(commands.suspend) end ),
-    awful.key({ modkey,           }, "F12",   function () sexec(commands.lock) end),
+    awful.key({}, "XF86PowerOff", function() sexec("sudo shutdown -h now") end ),   --power button
     --audio stuff
     awful.key({}, "XF86AudioMute", function() sexec(commands.mute) end ),
     awful.key({}, "XF86AudioRaiseVolume", function() sexec(commands.raisevol) end ),
@@ -278,6 +277,15 @@ globalkeys = awful.util.table.join(
     awful.key({}, "XF86AudioPlay", function() sexec(commands.cmuspause) end ),
     awful.key({}, "XF86Tools", function() sexec(commands.cmusplay) end ),
     awful.key({}, "XF86Calculator", function() sexec(commands.calc) end ),
+
+    awful.key({}, "XF86Launch1", function() sexec("") end ),    --ThinkVantage
+    awful.key({}, "XF86ScreenSaver", function() sexec("xlock -mode blank") end ), --fn-f2
+    awful.key({}, "XF86Sleep", function() sexec("sudo pm-suspend") end ), --fn-f4
+
+
+
+    --awful.key({}, "248", function() sexec("touch ~/111111") end ),
+    --awful.key({}, 248, function() sexec("touch ~/111111") end ),
     awful.key({}, "Print", function() sexec(commands.screenshot) end ),
 
    -- awful.key({}, "XF86MyComputer", function() sexec(commands.fileman) end ),
