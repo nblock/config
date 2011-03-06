@@ -247,7 +247,6 @@ root.buttons(awful.util.table.join(
 
 -- {{{ Key bindings
 globalkeys = awful.util.table.join(
-    awful.key({}, "XF86PowerOff", function() sexec("sudo pm-suspend") end ),                   --power button
     awful.key({}, "XF86AudioMute", function() sexec("amixer sset PCM toggle") end ),
     awful.key({}, "XF86AudioRaiseVolume", function() sexec("amixer set PCM 2%+") end ),
     awful.key({}, "XF86AudioLowerVolume", function() sexec("amixer set PCM 2%-") end ),
@@ -260,6 +259,7 @@ globalkeys = awful.util.table.join(
     awful.key({}, "XF86Launch1", function() sexec("") end ),    --ThinkVantage
     awful.key({}, "XF86ScreenSaver", function() sexec("xlock -mode blank") end ),                   --fn - f2
     awful.key({}, "XF86Sleep", function() sexec("sudo pm-suspend") end ),                           --fn - f4
+    awful.key({}, "XF86WebCam", function() sexec("~/bin/bluetooth-toggle.sh") end ),                --fn - f6
     awful.key({}, "XF86Display", function() sexec("") end ),                       --fn - f7
     awful.key({}, "XF86TouchpadToggle", function() sexec("~/bin/touchpad-toggle.sh") end ),         --fn - f8
    -- awful.key({}, "XF86MyComputer", function() sexec(commands.fileman) end ),
