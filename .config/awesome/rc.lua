@@ -70,8 +70,6 @@ for s = 1, screen.count() do
      layouts[1], layouts[1], layouts[1], --       4, 5 ,6
      layouts[1], layouts[1], layouts[1]  --       7, 8, 9
     })
- 
-
 end
 -- }}}
 
@@ -405,12 +403,12 @@ awful.rules.rules = {
     --apptags
     --downloading stuff
     { rule = { class = "JDownloader" },
-    properties = { tag = tags[1][1],switchtotag = false } },
+    properties = { tag = tags[screen.count()][1],switchtotag = false } },
     { rule = { instance = "rtorrent" },
-    properties = { tag = tags[1][1],switchtotag = false } },
+    properties = { tag = tags[screen.count()][1],switchtotag = false } },
     -- mail
     { rule = { class = "Thunderbird" },
-    properties = { tag = tags[1][2],switchtotag = true } },
+    properties = { tag = tags[screen.count()][2],switchtotag = true } },
     --chat and stuff like that
     { rule = { class = "Choqok" },
     properties = { tag = tags[1][3],switchtotag = false } },
@@ -418,13 +416,13 @@ awful.rules.rules = {
     properties = { tag = tags[1][3],switchtotag = false } },
     -- cmus
     { rule = { instance = "cmus" },
-    properties = { tag = tags[1][4],switchtotag = false } },
+    properties = { tag = tags[screen.count()][4],switchtotag = false } },
     -- news
     { rule = { instance = "newsbeuter" },
-    properties = { tag = tags[1][5],switchtotag = false } },
+    properties = { tag = tags[screen.count()][5],switchtotag = false } },
     --file manager
     { rule = { class = "Dolphin" },
-    properties = { tag = tags[1][7],switchtotag = true } },
+    properties = { tag = tags[screen.count()][7],switchtotag = true } },
 }
 -- }}}
 
