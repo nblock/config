@@ -1,2 +1,4 @@
 keycode 199 = XF86TouchpadToggle NoSymbol XF86TouchpadToggle
+keycode 113 = XF86AudioMute NoSymbol XF86AudioMute
+
 !keycode 248 toggle microphone
