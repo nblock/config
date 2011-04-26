@@ -408,10 +408,8 @@ awful.rules.rules = {
     properties = { tag = tags[screen.count()][1],switchtotag = false } },
     -- mail
     { rule = { class = "Thunderbird" },
-    properties = { tag = tags[screen.count()][2],switchtotag = true } },
-    --chat and stuff like that
-    { rule = { class = "Choqok" },
-    properties = { tag = tags[1][3],switchtotag = false } },
+    properties = { tag = tags[screen.count()][2],switchtotag = false } },
+    --pidgin
     { rule = { class = "Pidgin" },
     properties = { tag = tags[1][3],switchtotag = false } },
     -- cmus

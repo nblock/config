@@ -43,6 +43,7 @@ map <F6> :w<CR>:!make<CR>
 vmap <F9> :!xclip -f -sel clip<CR>
 map <F10> :-1r !xclip -o -sel clip<CR>
 nnoremap <F11> :TlistToggle<CR>
+map <F12> <C-]>
 
 "folding for python
 autocmd FileType python setlocal foldmethod=indent
