@@ -101,7 +101,7 @@ alias Syu='y -Syu'
 alias S='y -S'
 alias Ss='y -Ss'
 alias clean='y -Qdt && y -Scc'
-alias hostip='curl icanhazip.com'
+#alias hostip='curl -6 icanhazip.com || curl -4 icanhazip.com'
 alias su='su -'
 alias config='git --git-dir=$HOME/.config.git/ --work-tree=$HOME'
 alias serve='python -m http.server 8080'
@@ -158,14 +158,12 @@ function x()
 }
 
 #generate random pw
-function random()
-{
+function random(){
 	< /dev/urandom tr -dc '[](){}?!.,;_A-Z-a-z-0-9' | head -c${1:-20};echo;
 }
 
 #wrapper for rdiff-backup
-function backup()
-{
+function backup(){
 	TD=/media/sdb1/rdiff-backup
 	BF=/home/flo/development/shelldev/backup-data
 	if [ -d $TD ]; then
@@ -175,3 +173,18 @@ function backup()
 	fi
 }
 
+#obtain public ip addresses (v4 and v6) if available
+function hostip(){
+  IPV6=`curl -6 icanhazip.com 2&>1 /dev/null`
+  IPV4=`curl -4 icanhazip.com 2&>1 /dev/null`
+  if [ -z "$IPV6" ]; then
+    echo "IPv6: -"
+  else
+    echo "IPv6: ${IPV6}"
+  fi
+  if [ -z "$IPV4" ]; then
+    echo "IPv4: -"
+  else
+    echo "IPv4: ${IPV4}"
+  fi
+}
