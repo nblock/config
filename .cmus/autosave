@@ -60,6 +60,7 @@ set repeat_current=false
 set replaygain=disabled
 set replaygain_limit=true
 set replaygain_preamp=6.000000
+set resume=false
 set set_term_title=false
 set show_hidden=false
 set show_remaining_time=true

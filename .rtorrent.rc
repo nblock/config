@@ -18,15 +18,15 @@ max_peers_seed = 50
 #upload_rate = 0
 
 # Default directory to save the downloaded torrents.
-directory = ~/download/rtorrent
+directory = ~/download/rtorrent/tmp
 
 # Default session directory. Make sure you don't run multiple instance
 # of rtorrent using the same session directory. Perhaps using a
 # relative path?
-session = ~/download/rtorrent/.session
+session = ~/download/rtorrent/tmp/.session
 
 #move completed files
-system.method.set_key = event.download.finished,move_complete,"execute=mv,-u,$d.get_base_path=,~/download/rtorrent/complete/;d.set_directory=~/download/rtorrent/complete"
+system.method.set_key = event.download.finished,move_complete,"execute=mv,-u,$d.get_base_path=,~/download/rtorrent;d.set_directory=~/download/rtorrent"
 # Watch a directory for new torrents, and stop those that have been deleted.
 schedule = watch_directory,10,10,load_start=~/download/rtorrent/watch/*.torrent
 schedule = tied_directory,10,10,start_tied=
