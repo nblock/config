@@ -73,6 +73,13 @@ let g:tex_flavor = "latex"  "assume latex
 filetype plugin on
 let g:pydiction_location = '/usr/share/pydiction/complete-dict'
 
+"taglist
+let Tlist_GainFocus_On_ToggleOpen = 1
+let Tlist_WinWidth = 40
+let tlist_tex_settings   = 'latex;s:sections;g:graphics;l:labels;r:refs;p:pagerefs'
+let tlist_make_settings  = 'make;m:makros;t:targets'
+autocmd BufWritePost *.tex,*.py :TlistUpdate
+
 "syntax, 256 colors, colorscheme
 syntax on
 set t_Co=256
