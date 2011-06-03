@@ -77,7 +77,7 @@ let g:pydiction_location = '/usr/share/pydiction/complete-dict'
 let Tlist_WinWidth = 40
 let Tlist_GainFocus_On_ToggleOpen = 1
 let Tlist_File_Fold_Auto_Close = 1
-let tlist_tex_settings   = 'latex;s:sections;g:graphics;l:labels;r:refs;p:pagerefs'
+let tlist_tex_settings   = 'latex;s:sections;g:graphics;L:listings;l:labels;r:refs'
 let tlist_make_settings  = 'make;m:makros;t:targets'
 autocmd BufWritePost *.tex,*.py :TlistUpdate
 
