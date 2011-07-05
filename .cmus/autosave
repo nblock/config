@@ -1,4 +1,4 @@
-set aaa_mode=album
+set aaa_mode=artist
 set altformat_current= %F 
 set altformat_playlist= %f%= %d 
 set altformat_title=%f
@@ -68,7 +68,7 @@ set shuffle=true
 set smart_artist_sort=true
 set softvol=false
 set softvol_state=100 100
-set status_display_program=/home/flo/development/repo/cmus-notify/cmus-notify
+set status_display_program=/home/flo/development/cmus-notify/cmus-notify
 bind browser backspace browser-up
 bind browser i toggle show_hidden
 bind common + vol +10%
