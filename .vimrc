@@ -6,7 +6,7 @@ set showcmd
 set showmatch         "show matching brackets (),{},[]
 set mat=3             "show matching brackets for 0.3 seconds
 set sessionoptions=blank,buffers,curdir,folds,globals,help,localoptions,options,resize,tabpages,winsize,winpos
-set encoding=utf-8
+set encoding=utf-8    "use utf-8 everywhere
 set fileencoding=utf-8
 set termencoding=utf-8
 set backspace=indent,eol,start	"more flexible backspace
@@ -14,7 +14,7 @@ set mouse=a			      "enable mouse usage in all modes
 set incsearch			    "jump to match during searching
 set hlsearch			    "highlight search
 set ttyfast			      "fast terminal connection
-"set lazyredraw        "don't redraw while running macros
+set autochdir         "automatically change to dir where $FILE resides
 
 "use a terminal title
 set title
@@ -42,7 +42,7 @@ autocmd FileType tex map <F5> :w<CR>:!latexmk -pdf "%"<CR>
 map <F6> :w<CR>:!make<CR>
 vmap <F9> :!xclip -f -sel clip<CR>
 map <F10> :-1r !xclip -o -sel clip<CR>
-nnoremap <F11> :TlistToggle<CR>
+nnoremap <silent> <F11> :TagbarToggle<CR>
 map <F12> <C-]>
 
 "folding for python
@@ -73,13 +73,19 @@ let g:tex_flavor = "latex"  "assume latex
 filetype plugin on
 let g:pydiction_location = '/usr/share/pydiction/complete-dict'
 
-"taglist
-let Tlist_WinWidth = 40
-let Tlist_GainFocus_On_ToggleOpen = 1
-let Tlist_File_Fold_Auto_Close = 1
-let tlist_tex_settings   = 'latex;s:sections;g:graphics;L:listings;l:labels;r:refs'
-let tlist_make_settings  = 'make;m:makros;t:targets'
-autocmd BufWritePost *.tex,*.py :TlistUpdate
+"tagbar
+let g:tagbar_type_tex = {
+  \ 'ctagstype' : 'latex',
+  \ 'kinds' : [
+  \ 's:sections',
+  \ 'g:graphics',
+  \ 'l:labels',
+  \ 'r:refs:1',
+  \ 'L:listings',
+  \ 'p:pagerefs:1'
+  \ ],
+  \ 'sort' : 0,
+  \ }
 
 "syntax, 256 colors, colorscheme
 syntax on
