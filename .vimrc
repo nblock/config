@@ -15,6 +15,8 @@ set incsearch			    "jump to match during searching
 set hlsearch			    "highlight search
 set ttyfast			      "fast terminal connection
 set autochdir         "automatically change to dir where $FILE resides
+set scrolloff=4       "4 lines above/below cursor when scrolling
+set listchars=tab:▸\ ,eol:¬ "different symbols for tabs and eol
 
 "use a terminal title
 set title
@@ -50,14 +52,14 @@ autocmd FileType python setlocal foldmethod=indent
 
 "switch spellcheck languages
 let g:myLang = 0
-let g:myLangList = [ "nospell", "de_de", "en_us" ]
+let g:myLangList = [ "nospell", "de", "en" ]
 function! MySpellLang()
   "loop through languages
   let g:myLang = g:myLang + 1
   if g:myLang >= len(g:myLangList) | let g:myLang = 0 | endif
   if g:myLang == 0 | set nospell | endif
-  if g:myLang == 1 | setlocal spell spelllang=de_de spellfile=~/.vim/spell/de.utf-8.add | endif
-  if g:myLang == 2 | setlocal spell spelllang=en_us spellfile=~/.vim/spell/en.utf-8.add | endif
+  if g:myLang == 1 | setlocal spell spelllang=de | endif
+  if g:myLang == 2 | setlocal spell spelllang=en | endif
   echo "language:" g:myLangList[g:myLang]
 endf
 
@@ -86,6 +88,9 @@ let g:tagbar_type_tex = {
   \ ],
   \ 'sort' : 0,
   \ }
+
+"supertab
+let g:SuperTabDefaultCompletionType='context' "autodetect completion mode
 
 "syntax, 256 colors, colorscheme
 syntax on
