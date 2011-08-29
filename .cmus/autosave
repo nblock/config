@@ -1,4 +1,4 @@
-set aaa_mode=artist
+set aaa_mode=all
 set altformat_current= %F 
 set altformat_playlist= %f%= %d 
 set altformat_title=%f
@@ -64,7 +64,7 @@ set resume=false
 set set_term_title=false
 set show_hidden=false
 set show_remaining_time=true
-set shuffle=false
+set shuffle=true
 set smart_artist_sort=true
 set softvol=false
 set softvol_state=100 100

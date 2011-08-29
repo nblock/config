@@ -17,6 +17,7 @@ set ttyfast			      "fast terminal connection
 set autochdir         "automatically change to dir where $FILE resides
 set scrolloff=4       "4 lines above/below cursor when scrolling
 set listchars=tab:▸\ ,eol:¬ "different symbols for tabs and eol
+set number            "enable line numbering
 
 "use a terminal title
 set title
