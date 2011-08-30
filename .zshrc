@@ -192,7 +192,7 @@ function hostip(){
 function serve(){
   SERVE_PORT=8080
   echo "listening on:"
-  ip addr s | grep -Eo 'inet6? [^/]*' | sort | uniq |awk -v P=$SERVE_PORT '{print " - " $2 ":" P}'
+  ip addr s | grep -Eo 'inet [^/]*' | sort | uniq |awk -v P=$SERVE_PORT '{print " - " $2 ":" P}'
   python -m http.server $SERVE_PORT 1>/dev/null
   unset $SERVE_PORT
 }
