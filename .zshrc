@@ -104,7 +104,6 @@ alias clean='y -Qdt && y -Scc'
 #alias hostip='curl -6 icanhazip.com || curl -4 icanhazip.com'
 alias su='su -'
 alias config='git --git-dir=$HOME/.config.git/ --work-tree=$HOME'
-alias serve='python -m http.server 8080'
 
 # key bindings (vim mode)
 bindkey -v
@@ -187,4 +186,13 @@ function hostip(){
   else
     echo "IPv4: ${IPV4}"
   fi
+}
+
+#serve local dir via http
+function serve(){
+  SERVE_PORT=8080
+  echo "listening on:"
+  ip addr s | grep -Eo 'inet6? [^/]*' | sort | uniq |awk -v P=$SERVE_PORT '{print " - " $2 ":" P}'
+  python -m http.server $SERVE_PORT 1>/dev/null
+  unset $SERVE_PORT
 }
