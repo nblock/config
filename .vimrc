@@ -35,19 +35,6 @@ set softtabstop=2
 set laststatus=2
 set statusline=%<%F\ %h%m%r%=%k\ %-10.(%l/%L,%c%V%)\ %P\ [%{&encoding}:%{&fileformat}]%(\ %w%)\ %y
 
-"shortcuts
-nnoremap <F2> :set invpaste paste?<CR>
-imap <F2> <C-O><F2>
-set pastetoggle=<F2>
-map <F3> :nohlsearch<CR>
-autocmd FileType python map <F5> :w<CR>:!python2 "%"<CR>
-autocmd FileType tex map <F5> :w<CR>:!latexmk -pdf "%"<CR>
-map <F6> :w<CR>:!make<CR>
-vmap <F9> :!xclip -f -sel clip<CR>
-map <F10> :-1r !xclip -o -sel clip<CR>
-nnoremap <silent> <F11> :TagbarToggle<CR>
-map <F12> <C-]>
-
 "folding for python
 autocmd FileType python setlocal foldmethod=indent
 
@@ -64,8 +51,35 @@ function! MySpellLang()
   echo "language:" g:myLangList[g:myLang]
 endf
 
+"cleaning up
+function! Preserve(command)
+  " Preparation: save last search, and cursor position.
+  let _s=@/
+  let l = line(".")
+  let c = col(".")
+  " Do the business:
+  execute a:command
+  " Clean up: restore previous search history, and cursor position
+  let @/=_s
+  call cursor(l, c)
+endfunction
+
+"shortcuts
+nnoremap <F2> :set invpaste paste?<CR>
+imap <F2> <C-O><F2>
+set pastetoggle=<F2>
+map <F3> :nohlsearch<CR>
+autocmd FileType python map <F5> :w<CR>:!python2 "%"<CR>
+autocmd FileType tex map <F5> :w<CR>:!latexmk -pdf "%"<CR>
+map <F6> :w<CR>:!make<CR>
+vmap <F9> :!xclip -f -sel clip<CR>
+map <F10> :-1r !xclip -o -sel clip<CR>
+nnoremap <silent> <F11> :TagbarToggle<CR>
+map <F12> <C-]>
 map <F7> :call MySpellLang()<CR>
 imap <F7> <C-o>:call MySpellLang()<CR>
+nmap _$ :call Preserve("%s/\\s\\+$//e")<CR>
+nmap _= :call Preserve("normal gg=G")<CR>
 
 "Will allow you to use :w!! to write to a file using sudo if you forgot to "sudo vim file" (it will prompt for sudo password when writing)
 cmap w!! %!sudo tee > /dev/null %
