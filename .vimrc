@@ -107,6 +107,10 @@ let g:tagbar_type_tex = {
 "supertab
 let g:SuperTabDefaultCompletionType='context' "autodetect completion mode
 
+"autocmd for different filetypes
+autocmd BufNewFile,BufRead PKGBUILD setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab smartindent autoindent
+
 "syntax, 256 colors, colorscheme
 syntax on
 set t_Co=256
