@@ -3,30 +3,31 @@
 URxvt*title:           	urxvtc
 URxvt*termName:        	rxvt-unicode
 URxvt*cursorBlink:     	true
-URxvt*urgentOnBell:	true
+URxvt*urgentOnBell:	    true
 
-!--[Url's /launching/marking/yanking]--!
+!--[Urls /launching/marking/yanking]--!
 URxvt*perl-ext:        	default,matcher
 URxvt*urlLauncher:     	/usr/bin/firefox
 URxvt*matcher.button:  	1 
 URxvt*matcher.pattern.1:\\bwww\\.[\\w-]\\.[\\w./?&@#-]*[\\w/-]
 
 !--[Fonts]--!
-URxvt*font: 		xft:Bitstream Vera Sans Mono:pixelsize=14:antialias=false
-URxvt*italicFont:	xft:Bitstream Vera Sans Mono:italic:autohint=true:antialias=false
-URxvt*boldItalicFont:	xft:Bitstream Vera Sans Mono:bold:italic:autohint=true:antialias=false
+URxvt*font: 		        xft:Bitstream Vera Sans Mono:pixelsize=14:antialias=false
+URxvt*italicFont:	      xft:Bitstream Vera Sans Mono:italic:autohint=true:antialias=false
+URxvt*boldFont:	        xft:Bitstream Vera Sans Mono:bold:autohint=true:antialias=false
+URxvt*boldItalicFont:	  xft:Bitstream Vera Sans Mono:bold:italic:autohint=true:antialias=false
+
+!!--[Urxvt Options]--!
 URxvt*underlineColor:   yellow
 URxvt*scrollBar:        false
-!
-!!--[Urxvt Options]--!
 URxvt*boldMode:         false
 URxvt*imLocale:         de_AT.UTF-8
 URxvt*loginShell:       true
 URxvt*borderless:       false
 URxvt*jumpScroll:       true
-URxvt*saveLines:	5000
-URxvt*transparent:	false
-URxvt*shading:		50
+URxvt*saveLines:	      5000
+URxvt*transparent:	    false
+URxvt*shading:		      50
 URxvt*scrollTtyKeypress:true
 URxvt*tintColor:        white
 URxvt*internalBorder:   0
@@ -37,7 +38,6 @@ URxvt*foreground:       #ddccbb
 URxvt*colorBD:          #ffffff
 URxvt*colorIT:          #bbbbbb
 URxvt*colorUL:          #999999
-URxvt*underlineColor:   #999999
 
 !--[Colours]--!
 !Theme One from 
@@ -60,4 +60,3 @@ URxvt*underlineColor:   #999999
 *color13:    rgb:f8/54/f8
 *color14:    rgb:50/fc/f8
 *color15:    rgb:f8/fc/f8
-
