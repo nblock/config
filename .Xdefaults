@@ -12,13 +12,12 @@ URxvt*matcher.button:  	1
 URxvt*matcher.pattern.1:\\bwww\\.[\\w-]\\.[\\w./?&@#-]*[\\w/-]
 
 !--[Fonts]--!
-URxvt*font: 		        xft:Bitstream Vera Sans Mono:pixelsize=14:antialias=false
+URxvt*font: 		        xft:Bitstream Vera Sans Mono:pixelsize=13:antialias=false
 URxvt*italicFont:	      xft:Bitstream Vera Sans Mono:italic:autohint=true:antialias=false
 URxvt*boldFont:	        xft:Bitstream Vera Sans Mono:bold:autohint=true:antialias=false
 URxvt*boldItalicFont:	  xft:Bitstream Vera Sans Mono:bold:italic:autohint=true:antialias=false
 
 !!--[Urxvt Options]--!
-URxvt*underlineColor:   yellow
 URxvt*scrollBar:        false
 URxvt*boldMode:         false
 URxvt*imLocale:         de_AT.UTF-8
@@ -38,6 +37,7 @@ URxvt*foreground:       #ddccbb
 URxvt*colorBD:          #ffffff
 URxvt*colorIT:          #bbbbbb
 URxvt*colorUL:          #999999
+URxvt*underlineColor:   #999999
 
 !--[Colours]--!
 !Theme One from 

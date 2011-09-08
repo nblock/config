@@ -36,7 +36,7 @@ ignore-article "*" "title =~ \"more rss feeds from\""
 ignore-article "*" "title =~ \"[iI]P[ao]d\""
 ignore-article "*" "title =~ \"iPhone\""
 ignore-article "*" "title =~ \"Windows Phone 7\""
-#ignore-article "*" "title =~ \"Obama\""
+ignore-article "*" "title =~ \"Alm\""
 
 #key bindings
 bind-key c next-unread-feed
@@ -62,7 +62,7 @@ color info		yellow  blue	bold
 color article		blue	white
 
 #layout
-datetime-format %d.%m-%H:%M
+datetime-format "%d.%m %H:%M"
 text-width 0		#max text width to render html
 display-article-progress yes
 show-keymap-hint no	#keyboard hints ?
