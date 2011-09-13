@@ -51,6 +51,22 @@ function! MySpellLang()
   echo "language:" g:myLangList[g:myLang]
 endf
 
+"call the python version that is specified in the first line
+"in Arch Linux, `python` is Python 3.x
+function! ExecSpecifiedPython()
+  let lc = getline(1)
+
+  "check if shebang is present
+  if stridx(lc, "python") == -1
+    let py = '!/usr/bin/python2 "%"' "default to python2
+  else
+    let lc = substitute(lc,"#", "", "g")
+    let lc = substitute(lc,"env ", "", "g")
+    let py = lc . ' "%"'
+  endif
+  exec py
+endfunction
+
 "cleaning up
 function! Preserve(command)
   " Preparation: save last search, and cursor position.
@@ -69,7 +85,7 @@ nnoremap <F2> :set invpaste paste?<CR>
 imap <F2> <C-O><F2>
 set pastetoggle=<F2>
 map <F3> :nohlsearch<CR>
-autocmd FileType python map <F5> :w<CR>:!python2 "%"<CR>
+autocmd FileType python map <F5> :w<CR>:call ExecSpecifiedPython()<CR>
 autocmd FileType tex map <F5> :w<CR>:!latexmk -pdf "%"<CR>
 map <F6> :w<CR>:!make<CR>
 vmap <F9> :!xclip -f -sel clip<CR>
