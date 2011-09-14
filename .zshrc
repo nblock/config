@@ -106,6 +106,22 @@ alias clean='y -Qdt && y -Scc'
 alias su='su -'
 alias config='git --git-dir=$HOME/.config.git/ --work-tree=$HOME'
 
+#alias for git
+alias ga='git add'
+alias gp='git push'
+alias gl='git log'
+alias gs='git status -sb'
+alias gd='git diff'
+alias gdc='git diff --cached'
+alias gm='git commit -m'
+alias gma='git commit -am'
+alias gb='git branch'
+alias gc='git checkout'
+alias gra='git remote add'
+alias grr='git remote rm'
+alias gpu='git pull'
+alias gcl='git clone'
+
 # key bindings (vim mode)
 bindkey -v
 bindkey "\e[7~" beginning-of-line
