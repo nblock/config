@@ -1,3 +1,9 @@
+" File: .vimrc
+" Author: nblock <nblock [/at\] archlinux DOT us>
+" Description: just another .vimrc
+" Last Modified: September 14, 2011
+
+set nocompatible
 set nobackup
 set nowritebackup
 set noswapfile
@@ -35,8 +41,30 @@ set softtabstop=2
 set laststatus=2
 set statusline=%<%F\ %h%m%r%=%k\ %-10.(%l/%L,%c%V%)\ %P\ [%{&encoding}:%{&fileformat}]%(\ %w%)\ %y
 
-"folding for python
-autocmd FileType python setlocal foldmethod=indent
+"vundle settings
+filetype off                "required by vundle
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+"plugins managed by vundle
+Bundle 'gmarik/vundle'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-repeat'
+"dependencies for forked vim-snipmate
+Bundle 'git://github.com/MarcWeber/vim-addon-mw-utils.git'
+Bundle 'git://github.com/tomtom/tlib_vim.git'
+Bundle 'git://github.com/honza/snipmate-snippets.git'
+Bundle 'git://github.com/garbas/vim-snipmate.git'
+Bundle 'git://github.com/rbonvall/snipmate-snippets-bib.git'
+Bundle 'git://gitorious.org/vim-gnupg/vim-gnupg.git'
+Bundle 'matchit.zip'
+Bundle 'paster.vim'
+Bundle 'fs111/pydoc.vim'
+Bundle 'ervandew/supertab'
+Bundle 'Tagbar'
+
+filetype plugin indent on   "required by vundle
 
 "switch spellcheck languages
 let g:myLang = 0
@@ -102,6 +130,9 @@ cmap w!! %!sudo tee > /dev/null %
 
 let g:tex_flavor = "latex"  "assume latex
 
+"folding for python
+autocmd FileType python setlocal foldmethod=indent
+
 "vim-pydiction
 filetype plugin on
 let g:pydiction_location = '/usr/share/pydiction/complete-dict'
@@ -122,6 +153,9 @@ let g:tagbar_type_tex = {
 
 "supertab
 let g:SuperTabDefaultCompletionType='context' "autodetect completion mode
+
+"snipmate
+let g:snips_author = 'nblock <nblock [/at\] archlinux DOT us>'
 
 "autocmd for different filetypes
 autocmd BufNewFile,BufRead PKGBUILD setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
