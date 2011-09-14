@@ -23,6 +23,7 @@ setopt EXTENDEDGLOB		#use extended globbing
 setopt CORRECTALL		#use autocorrection for commands and args
 setopt NOBEEP			#avoid "beep"ing
 setopt prompt_subst	# Enables additional prompt extentions
+stty stop ""	#disable <ctrl-s> and <ctrl-q>
 
 #environment variables
 export EDITOR=vim
