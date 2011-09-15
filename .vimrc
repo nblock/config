@@ -23,7 +23,7 @@ set ttyfast			      "fast terminal connection
 set autochdir         "automatically change to dir where $FILE resides
 set scrolloff=4       "4 lines above/below cursor when scrolling
 set listchars=tab:▸\ ,eol:¬ "different symbols for tabs and eol
-set number            "enable line numbering
+set relativenumber	  "enable relative line numbering
 
 "use a terminal title
 set title
@@ -63,6 +63,7 @@ Bundle 'paster.vim'
 Bundle 'fs111/pydoc.vim'
 Bundle 'ervandew/supertab'
 Bundle 'Tagbar'
+Bundle 'git://git.wincent.com/command-t.git'
 
 filetype plugin indent on   "required by vundle
 
@@ -108,7 +109,8 @@ function! Preserve(command)
   call cursor(l, c)
 endfunction
 
-"shortcuts
+"shortcuts and mappings
+let mapleader = ","
 nnoremap <F2> :set invpaste paste?<CR>
 imap <F2> <C-O><F2>
 set pastetoggle=<F2>
@@ -122,8 +124,16 @@ nnoremap <silent> <F11> :TagbarToggle<CR>
 map <F12> <C-]>
 map <F7> :call MySpellLang()<CR>
 imap <F7> <C-o>:call MySpellLang()<CR>
-nmap _$ :call Preserve("%s/\\s\\+$//e")<CR>
-nmap _= :call Preserve("normal gg=G")<CR>
+nmap <leader>$ :call Preserve("%s/\\s\\+$//e")<CR>
+nmap <leader>= :call Preserve("normal gg=G")<CR>
+
+nnoremap <leader>w <C-w>
+
+"enable very magic forward/backward search
+nnoremap / /\v
+vnoremap / /\v
+nnoremap ? /\v
+vnoremap ? /\v
 
 "Will allow you to use :w!! to write to a file using sudo if you forgot to "sudo vim file" (it will prompt for sudo password when writing)
 cmap w!! %!sudo tee > /dev/null %
