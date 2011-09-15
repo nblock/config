@@ -1,0 +1,9 @@
+" File: .pentadactylrc
+" Author: nblock <nblock [/at\] archlinux DOT us>
+" Description: 
+" Last Modified: September 15, 2011
+
+"default search engine is duckduckgo (keyword: ddg)
+set defsearch=ddg
+
+" vim:set ft=vim
