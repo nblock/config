@@ -20,10 +20,10 @@ set mouse=a			      "enable mouse usage in all modes
 set incsearch			    "jump to match during searching
 set hlsearch			    "highlight search
 set ttyfast			      "fast terminal connection
-set autochdir         "automatically change to dir where $FILE resides
 set scrolloff=4       "4 lines above/below cursor when scrolling
 set listchars=tab:▸\ ,eol:¬ "different symbols for tabs and eol
 set relativenumber	  "enable relative line numbering
+set nomodeline	      "use secure modeline
 
 "use a terminal title
 set title
@@ -64,6 +64,7 @@ Bundle 'fs111/pydoc.vim'
 Bundle 'ervandew/supertab'
 Bundle 'Tagbar'
 Bundle 'git://git.wincent.com/command-t.git'
+Bundle 'ciaranm/securemodelines'
 
 filetype plugin indent on   "required by vundle
 
