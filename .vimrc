@@ -65,6 +65,7 @@ Bundle 'ervandew/supertab'
 Bundle 'Tagbar'
 Bundle 'git://git.wincent.com/command-t.git'
 Bundle 'ciaranm/securemodelines'
+Bundle 'scrooloose/nerdcommenter'
 
 filetype plugin indent on   "required by vundle
 
