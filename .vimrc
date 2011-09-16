@@ -61,11 +61,11 @@ Bundle 'git://gitorious.org/vim-gnupg/vim-gnupg.git'
 Bundle 'matchit.zip'
 Bundle 'paster.vim'
 Bundle 'fs111/pydoc.vim'
-Bundle 'ervandew/supertab'
 Bundle 'Tagbar'
 Bundle 'git://git.wincent.com/command-t.git'
 Bundle 'ciaranm/securemodelines'
 Bundle 'scrooloose/nerdcommenter'
+Bundle 'AutoComplPop'
 
 filetype plugin indent on   "required by vundle
 
@@ -162,9 +162,6 @@ let g:tagbar_type_tex = {
   \ ],
   \ 'sort' : 0,
   \ }
-
-"supertab
-let g:SuperTabDefaultCompletionType='context' "autodetect completion mode
 
 "snipmate
 let g:snips_author = 'nblock <nblock [/at\] archlinux DOT us>'
