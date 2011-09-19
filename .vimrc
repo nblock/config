@@ -61,6 +61,7 @@ Bundle 'ciaranm/securemodelines'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'AutoComplPop'
 Bundle 'drmingdrmer/xptemplate'
+Bundle 'file:///$HOME/development/xptemplate-snippets'
 
 filetype plugin indent on   "required by vundle
 
