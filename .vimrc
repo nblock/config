@@ -51,12 +51,6 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-repeat'
-"dependencies for forked vim-snipmate
-Bundle 'git://github.com/MarcWeber/vim-addon-mw-utils.git'
-Bundle 'git://github.com/tomtom/tlib_vim.git'
-Bundle 'git://github.com/honza/snipmate-snippets.git'
-Bundle 'git://github.com/garbas/vim-snipmate.git'
-Bundle 'git://github.com/rbonvall/snipmate-snippets-bib.git'
 Bundle 'git://gitorious.org/vim-gnupg/vim-gnupg.git'
 Bundle 'matchit.zip'
 Bundle 'paster.vim'
@@ -66,6 +60,7 @@ Bundle 'git://git.wincent.com/command-t.git'
 Bundle 'ciaranm/securemodelines'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'AutoComplPop'
+Bundle 'drmingdrmer/xptemplate'
 
 filetype plugin indent on   "required by vundle
 
@@ -163,8 +158,13 @@ let g:tagbar_type_tex = {
   \ 'sort' : 0,
   \ }
 
-"snipmate
-let g:snips_author = 'nblock <nblock [/at\] archlinux DOT us>'
+"xptemplate
+"custom settings in xptemplate/personal/ftplugin/
+let g:xptemplate_key = '<Plug>triggerxpt'
+let g:xptemplate_key_pum_only='<S-Tab>'
+inoremap <Plug>closePUM <C-v><C-v><BS>
+imap <TAB> <Plug>closePUM<Plug>triggerxpt
+let g:xptemplate_fallback = 'nore:<TAB>'
 
 "autocmd for different filetypes
 autocmd BufNewFile,BufRead PKGBUILD setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
