@@ -124,7 +124,13 @@ imap <F7> <C-o>:call MySpellLang()<CR>
 nmap <leader>$ :call Preserve("%s/\\s\\+$//e")<CR>
 nmap <leader>= :call Preserve("normal gg=G")<CR>
 
-nnoremap <leader>w <C-w>
+"switch between buffers
+nnoremap <leader>j <C-w>j
+nnoremap <leader>k <C-w>k
+nnoremap <leader>h <C-w>h
+nnoremap <leader>l <C-w>l
+nnoremap <leader>w <C-w>w
+nnoremap <leader><space> <C-w>r
 
 "enable very magic forward/backward search
 nnoremap / /\v
