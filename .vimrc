@@ -167,7 +167,8 @@ let g:tagbar_type_tex = {
 "xptemplate
 "custom settings in xptemplate/personal/ftplugin/
 let g:xptemplate_key = '<Plug>triggerxpt'
-let g:xptemplate_key_pum_only = '<S-Tab>'
+let g:xptemplate_key_pum_only = '<C-r><Tab>'
+let g:xptemplate_nav_prev = '<S-Tab>'
 inoremap <Plug>closePUM <C-v><C-v><BS>
 imap <TAB> <Plug>closePUM<Plug>triggerxpt
 let g:xptemplate_fallback = 'nore:<TAB>'

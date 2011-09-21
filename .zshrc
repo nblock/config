@@ -108,7 +108,7 @@ alias config='git --git-dir=$HOME/.config.git/ --work-tree=$HOME'
 
 #alias for git
 alias ga='git add'
-alias gp='git push'
+alias gpush='git push'
 alias gl='git log'
 alias gs='git status -sb'
 alias gd='git diff'
@@ -119,7 +119,7 @@ alias gb='git branch'
 alias gc='git checkout'
 alias gra='git remote add'
 alias grr='git remote rm'
-alias gpu='git pull'
+alias gpull='git pull'
 alias gcl='git clone'
 
 # key bindings (vim mode)
