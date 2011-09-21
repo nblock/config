@@ -2,7 +2,6 @@
 " Author: nblock <nblock [/at\] archlinux DOT us>
 " Description: just another .vimrc
 " Last Modified: September 14, 2011
-
 set nocompatible
 set nobackup
 set nowritebackup
@@ -162,10 +161,11 @@ let g:tagbar_type_tex = {
 "xptemplate
 "custom settings in xptemplate/personal/ftplugin/
 let g:xptemplate_key = '<Plug>triggerxpt'
-let g:xptemplate_key_pum_only='<S-Tab>'
+let g:xptemplate_key_pum_only = '<S-Tab>'
 inoremap <Plug>closePUM <C-v><C-v><BS>
 imap <TAB> <Plug>closePUM<Plug>triggerxpt
 let g:xptemplate_fallback = 'nore:<TAB>'
+let g:xptemplate_vars = "SParg="
 
 "autocmd for different filetypes
 autocmd BufNewFile,BufRead PKGBUILD setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
