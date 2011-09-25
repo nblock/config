@@ -135,8 +135,8 @@ nnoremap <leader><space> <C-w>r
 "enable very magic forward/backward search
 nnoremap / /\v
 vnoremap / /\v
-nnoremap ? /\v
-vnoremap ? /\v
+nnoremap ? ?\v
+vnoremap ? ?\v
 
 "Will allow you to use :w!! to write to a file using sudo if you forgot to "sudo vim file" (it will prompt for sudo password when writing)
 cmap w!! %!sudo tee > /dev/null %
@@ -177,6 +177,7 @@ let g:xptemplate_vars = "SParg="
 "autocmd for different filetypes
 autocmd BufNewFile,BufRead PKGBUILD setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab smartindent autoindent
+autocmd FileType tex setlocal textwidth=120 tabstop=2 shiftwidth=2 softtabstop=2 expandtab smartindent autoindent
 
 "syntax, 256 colors, colorscheme
 syntax on
