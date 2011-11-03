@@ -109,7 +109,6 @@ alias config='git --git-dir=$HOME/.config.git/ --work-tree=$HOME'
 #alias for git
 alias ga='git add'
 alias gpush='git push'
-alias gl='git log'
 alias gs='git status -sb'
 alias gd='git diff'
 alias gdc='git diff --cached'
@@ -121,6 +120,13 @@ alias gra='git remote add'
 alias grr='git remote rm'
 alias gpull='git pull'
 alias gcl='git clone'
+alias gl='git log'
+alias glo='git log --oneline --graph --decorate'
+gldate() {
+  before=`date -d "$(date +$1) -1 day" +'%Y-%m-%d'`
+  git log --oneline --graph --decorate --since="$before" --until="$1"
+}
+
 
 # key bindings (vim mode)
 bindkey -v
@@ -144,7 +150,7 @@ bindkey '\e[A' history-beginning-search-backward
 bindkey '\e[B' history-beginning-search-forward
 
 #hashes
-hash -d fh5=~/fh-hagenberg/5.semester
+hash -d da=~/fh-hagenberg/da
 
 
 #extract various files with x $arg

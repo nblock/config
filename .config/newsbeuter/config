@@ -37,6 +37,7 @@ ignore-article "*" "title =~ \"[iI]P[ao]d\""
 ignore-article "*" "title =~ \"iPhone\""
 ignore-article "*" "title =~ \"Windows Phone 7\""
 ignore-article "*" "title =~ \"Alm\""
+ignore-article "http://lwn.net/headlines/rss" "title =~ \"\[\$\]\""
 
 #key bindings
 bind-key c next-unread-feed
@@ -53,6 +54,10 @@ bind-key s sort
 bind-key S revsort
 bind-key O open-in-browser
 bind-key o open-in-browser-and-mark-read
+bind-key b bookmark
+
+#bookmark
+bookmark-cmd "~/bin/instapaper.py" 
 
 #color config
 color background	red   	white

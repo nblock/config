@@ -61,6 +61,7 @@ Bundle 'scrooloose/nerdcommenter'
 Bundle 'AutoComplPop'
 Bundle 'drmingdrmer/xptemplate'
 Bundle 'file:///$HOME/development/xptemplate-snippets'
+Bundle 'nblock/vim-dokuwiki'
 
 filetype plugin indent on   "required by vundle
 
@@ -177,9 +178,15 @@ let g:xptemplate_vars = "SParg="
 "autocmd for different filetypes
 autocmd BufNewFile,BufRead PKGBUILD setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab smartindent autoindent
+autocmd BufWritePre *.py :call Preserve("%s/\\s\\+$//e")
 autocmd FileType tex setlocal textwidth=120 tabstop=2 shiftwidth=2 softtabstop=2 expandtab smartindent autoindent
 
 "syntax, 256 colors, colorscheme
 syntax on
 set t_Co=256
-colorscheme neon
+
+if has('gui_running')
+  colorscheme slate
+else
+  colorscheme neon
+endif
