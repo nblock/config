@@ -62,6 +62,7 @@ Bundle 'AutoComplPop'
 Bundle 'drmingdrmer/xptemplate'
 Bundle 'file:///$HOME/development/xptemplate-snippets'
 Bundle 'nblock/vim-dokuwiki'
+Bundle 'SudoEdit.vim'
 
 filetype plugin indent on   "required by vundle
 
@@ -139,9 +140,6 @@ vnoremap / /\v
 nnoremap ? ?\v
 vnoremap ? ?\v
 
-"Will allow you to use :w!! to write to a file using sudo if you forgot to "sudo vim file" (it will prompt for sudo password when writing)
-cmap w!! %!sudo tee > /dev/null %
-
 let g:tex_flavor = "latex"  "assume latex
 
 "folding for python
@@ -178,6 +176,7 @@ let g:xptemplate_vars = "SParg="
 "autocmd for different filetypes
 autocmd BufNewFile,BufRead PKGBUILD setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab smartindent autoindent
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd BufWritePre *.py :call Preserve("%s/\\s\\+$//e")
 autocmd FileType tex setlocal textwidth=120 tabstop=2 shiftwidth=2 softtabstop=2 expandtab smartindent autoindent
 

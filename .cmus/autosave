@@ -1,4 +1,4 @@
-set aaa_mode=all
+set aaa_mode=album
 set altformat_current= %F 
 set altformat_playlist= %f%= %d 
 set altformat_title=%f
@@ -55,7 +55,7 @@ set passwd=
 set pl_sort=
 set play_library=true
 set play_sorted=false
-set repeat=true
+set repeat=false
 set repeat_current=false
 set replaygain=disabled
 set replaygain_limit=true
@@ -64,7 +64,7 @@ set resume=false
 set set_term_title=false
 set show_hidden=false
 set show_remaining_time=true
-set shuffle=true
+set shuffle=false
 set smart_artist_sort=true
 set softvol=false
 set softvol_state=100 100

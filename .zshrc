@@ -219,3 +219,6 @@ function serve(){
   python -m http.server $SERVE_PORT 1>/dev/null
   unset $SERVE_PORT
 }
+
+function crop()
+  pdfcrop --pdftexcmd pdflatex --margins 2 "$1" "${1%.pdf}-cropped.pdf"
