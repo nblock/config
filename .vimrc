@@ -23,6 +23,7 @@ set scrolloff=4       "4 lines above/below cursor when scrolling
 set listchars=tab:▸\ ,eol:¬ "different symbols for tabs and eol
 set relativenumber	  "enable relative line numbering
 set nomodeline	      "use secure modeline
+set tabpagemax=50    "50 instead of 10 concurrent tabs
 
 "use a terminal title
 set title
