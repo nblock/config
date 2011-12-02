@@ -102,7 +102,6 @@ alias Syu='y -Syu'
 alias S='y -S'
 alias Ss='y -Ss'
 alias clean='y -Qdt && y -Scc'
-#alias hostip='curl -6 icanhazip.com || curl -4 icanhazip.com'
 alias su='su -'
 alias config='git --git-dir=$HOME/.config.git/ --work-tree=$HOME'
 
@@ -197,8 +196,8 @@ function backup(){
 
 #obtain public ip addresses (v4 and v6) if available
 function hostip(){
-  IPV6=`curl -6 icanhazip.com 2&>1 /dev/null`
-  IPV4=`curl -4 icanhazip.com 2&>1 /dev/null`
+  IPV6=`curl -s ipv6.icanhazipv6.com |grep my_address |sed -e 's/.*>\(.*\)<\/p>/\1/'`
+  IPV4=`curl -s ipv4.icanhazipv6.com |grep my_address |sed -e 's/.*>\(.*\)<\/p>/\1/'`
   if [ -z "$IPV6" ]; then
     echo "IPv6: -"
   else

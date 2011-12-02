@@ -53,18 +53,18 @@ set mixer.pulse.restore_volume=1
 set output_plugin=alsa
 set passwd=
 set pl_sort=
-set play_library=true
+set play_library=false
 set play_sorted=false
-set repeat=false
+set repeat=true
 set repeat_current=false
 set replaygain=disabled
 set replaygain_limit=true
 set replaygain_preamp=6.000000
-set resume=false
+set resume=true
 set set_term_title=false
 set show_hidden=false
-set show_remaining_time=true
-set shuffle=false
+set show_remaining_time=false
+set shuffle=true
 set smart_artist_sort=true
 set softvol=false
 set softvol_state=100 100
@@ -88,6 +88,7 @@ bind common D win-remove
 bind common E win-add-Q
 bind common G win-bottom
 bind common I echo {}
+bind common L push live-filter<space>
 bind common M toggle play_library
 bind common N search-prev
 bind common P win-mv-before
