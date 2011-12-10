@@ -1,5 +1,13 @@
 #newsbeuter 2.4 config - notizblock
 
+#color <element> <foreground color> <background color> [<attribute> ...]
+color listnormal color244 default
+color listfocus color166 color237 bold
+color info color237 color250
+color background color136 default
+color article color244 default
+
+
 #newsbeuter via proxy
 #in this case -> polipo (tor)
 use-proxy yes
@@ -55,13 +63,6 @@ bind-key S revsort
 bind-key O open-in-browser
 bind-key o open-in-browser-and-mark-read
 bind-key b bookmark
-
-#color <element> <foreground color> <background color> [<attribute> ...]
-color listnormal color244 default
-color listfocus color166 color237 bold
-color info color136 color235
-color background color136 default
-color article color244 default
 
 #bookmark
 bookmark-cmd "~/bin/instapaper.py" 
