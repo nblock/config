@@ -1,33 +1,33 @@
-set aaa_mode=album
+set aaa_mode=all
 set altformat_current= %F 
 set altformat_playlist= %f%= %d 
 set altformat_title=%f
 set altformat_trackwin= %f%= %d 
 set auto_reshuffle=false
 set buffer_seconds=10
-set color_cmdline_bg=gray
-set color_cmdline_fg=black
+set color_cmdline_bg=default
+set color_cmdline_fg=default
 set color_error=lightred
 set color_info=lightyellow
-set color_separator=blue
-set color_statusline_bg=blue
-set color_statusline_fg=lightyellow
-set color_titleline_bg=blue
-set color_titleline_fg=lightred
-set color_win_bg=gray
-set color_win_cur=lightyellow
-set color_win_cur_sel_bg=blue
-set color_win_cur_sel_fg=lightyellow
+set color_separator=green
+set color_statusline_bg=240
+set color_statusline_fg=white
+set color_titleline_bg=240
+set color_titleline_fg=white
+set color_win_bg=default
+set color_win_cur=gray
+set color_win_cur_sel_bg=166
+set color_win_cur_sel_fg=237
 set color_win_dir=blue
-set color_win_fg=blue
-set color_win_inactive_cur_sel_bg=gray
+set color_win_fg=yellow
+set color_win_inactive_cur_sel_bg=252
 set color_win_inactive_cur_sel_fg=lightyellow
-set color_win_inactive_sel_bg=gray
+set color_win_inactive_sel_bg=252
 set color_win_inactive_sel_fg=black
-set color_win_sel_bg=red
-set color_win_sel_fg=white
-set color_win_title_bg=blue
-set color_win_title_fg=lightyellow
+set color_win_sel_bg=237
+set color_win_sel_fg=166
+set color_win_title_bg=252
+set color_win_title_fg=black
 set confirm_run=true
 set continue=true
 set display_artist_sort_name=false
@@ -53,8 +53,8 @@ set mixer.pulse.restore_volume=1
 set output_plugin=alsa
 set passwd=
 set pl_sort=
-set play_library=false
-set play_sorted=false
+set play_library=true
+set play_sorted=true
 set repeat=true
 set repeat_current=false
 set replaygain=disabled
@@ -64,7 +64,7 @@ set resume=true
 set set_term_title=false
 set show_hidden=false
 set show_remaining_time=false
-set shuffle=true
+set shuffle=false
 set smart_artist_sort=true
 set softvol=false
 set softvol_state=100 100
@@ -88,7 +88,7 @@ bind common D win-remove
 bind common E win-add-Q
 bind common G win-bottom
 bind common I echo {}
-bind common L push live-filter<space>
+bind common L push live-filter 
 bind common M toggle play_library
 bind common N search-prev
 bind common P win-mv-before
