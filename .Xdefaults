@@ -12,7 +12,7 @@ URxvt*borderless:       false
 URxvt*jumpScroll:       true
 URxvt*saveLines:        5000
 URxvt*transparent:      false
-URxvt*shading:          50
+URxvt*fading:           0%
 URxvt*scrollTtyKeypress:true
 URxvt*internalBorder:   0
 
