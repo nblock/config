@@ -56,15 +56,15 @@ bind-key O open-in-browser
 bind-key o open-in-browser-and-mark-read
 bind-key b bookmark
 
+#color <element> <foreground color> <background color> [<attribute> ...]
+color listnormal color244 default
+color listfocus color166 color237 bold
+color info color136 color235
+color background color136 default
+color article color244 default
+
 #bookmark
 bookmark-cmd "~/bin/instapaper.py" 
-
-#color config
-color background	red   	white
-color listnormal	blue	white
-color listfocus		white  	red	bold
-color info		yellow  blue	bold
-color article		blue	white
 
 #layout
 datetime-format "%d.%m %H:%M"
