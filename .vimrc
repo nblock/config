@@ -21,9 +21,8 @@ set hlsearch                   " highlight search
 set ttyfast                    " fast terminal connection
 set scrolloff=4                " 4 lines above/below cursor when scrolling
 set listchars=tab:▸\ ,eol:¬    " different symbols for tabs and eol
-set relativenumber             " enable relative line numbering
 set nomodeline                 " use secure modeline
-set tabpagemax=50              " 50 instead of 10 concurrent tabs
+set tabpagemax=30              " 30 instead of 10 concurrent tabs
 set sessionoptions=blank,buffers,curdir,folds,globals,help,localoptions,options,resize,tabpages,winsize,winpos
 
 " use a terminal title
@@ -167,6 +166,9 @@ let g:tagbar_type_tex = {
   \ 'sort' : 0,
   \ }
 
+"AutoComplPop
+let g:acp_behaviorKeywordLength=4 "start matching after 4 consecutive chars -> less cpu consumption
+
 " xptemplate
 " custom settings in xptemplate/personal/ftplugin/
 let g:xptemplate_key = '<Plug>triggerxpt'
@@ -181,7 +183,7 @@ let g:xptemplate_vars = "SParg="
 autocmd BufNewFile,BufRead PKGBUILD setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab smartindent autoindent
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd BufWritePre *.py :call Preserve("%s/\\s\\+$//e")
+autocmd BufWritePre *.py,*.tex :call Preserve("%s/\\s\\+$//e")
 autocmd FileType tex setlocal textwidth=120 tabstop=2 shiftwidth=2 softtabstop=2 expandtab smartindent autoindent
 
 " colorscheme settings
