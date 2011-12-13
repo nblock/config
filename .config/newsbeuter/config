@@ -1,12 +1,11 @@
 #newsbeuter 2.4 config - notizblock
 
 #color <element> <foreground color> <background color> [<attribute> ...]
-#color listnormal color244 default
 color listnormal yellow default
 color listfocus color166 color237 bold
 color info color237 color250
 color background red default
-color article color244 default
+color article yellow default
 
 
 #newsbeuter via proxy
