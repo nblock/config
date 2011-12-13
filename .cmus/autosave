@@ -1,4 +1,4 @@
-set aaa_mode=all
+set aaa_mode=album
 set altformat_current= %F 
 set altformat_playlist= %f%= %d 
 set altformat_title=%f
@@ -63,8 +63,8 @@ set replaygain_preamp=6.000000
 set resume=true
 set set_term_title=false
 set show_hidden=false
-set show_remaining_time=false
-set shuffle=false
+set show_remaining_time=true
+set shuffle=true
 set smart_artist_sort=true
 set softvol=false
 set softvol_state=100 100
@@ -135,7 +135,7 @@ bind common z player-prev
 bind common { vol -1 -0
 bind common } vol -0 -1
 fset 90s=date>=1990&date<2000
-fset missing-tag=!stream&(artist=""|album=""|title=""|tracknumber=-1|date=-1)
+fset missing-tag=!~T
 fset mp3=filename="*.mp3"
 fset ogg=filename="*.ogg"
 fset ogg-or-mp3=ogg|mp3
