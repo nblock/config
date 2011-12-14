@@ -56,7 +56,7 @@ Bundle 'git://gitorious.org/vim-gnupg/vim-gnupg.git'
 Bundle 'matchit.zip'
 Bundle 'paster.vim'
 Bundle 'fs111/pydoc.vim'
-Bundle 'Tagbar'
+Bundle 'majutsushi/tagbar'
 Bundle 'git://git.wincent.com/command-t.git'
 Bundle 'ciaranm/securemodelines'
 Bundle 'scrooloose/nerdcommenter'
@@ -145,14 +145,12 @@ vnoremap ? ?\v
 
 let g:tex_flavor = "latex"  " assume latex as default tex
 
-" folding for python
-autocmd FileType python setlocal foldmethod=indent
-
 " vim-pydiction
 filetype plugin on
 let g:pydiction_location = '/usr/share/pydiction/complete-dict'
 
 " tagbar
+autocmd BufWinEnter *.py,*.tex nested TagbarOpen "open tagbar on certain filetypes
 let g:tagbar_type_tex = {
   \ 'ctagstype' : 'latex',
   \ 'kinds' : [
@@ -179,12 +177,12 @@ imap <TAB> <Plug>closePUM<Plug>triggerxpt
 let g:xptemplate_fallback = 'nore:<TAB>'
 let g:xptemplate_vars = "SParg="
 
-" autocmd for different filetypes
+" settings for different filetypes
 autocmd BufNewFile,BufRead PKGBUILD setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
-autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab smartindent autoindent
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd BufWritePre *.py,*.tex :call Preserve("%s/\\s\\+$//e")
 autocmd FileType tex setlocal textwidth=120 tabstop=2 shiftwidth=2 softtabstop=2 expandtab smartindent autoindent
+autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab smartindent autoindent foldmethod=indent
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete " change omnifunc for python
+autocmd BufWritePre *.py,*.tex :call Preserve("%s/\\s\\+$//e")    " clean up whitespaces for certain filetypes
 
 " colorscheme settings
 syntax enable
