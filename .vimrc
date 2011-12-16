@@ -66,6 +66,7 @@ Bundle 'file:///$HOME/development/xptemplate-snippets'
 Bundle 'nblock/vim-dokuwiki'
 Bundle 'SudoEdit.vim'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'TeX-PDF'
 
 filetype plugin indent on   " required by vundle
 
@@ -150,7 +151,7 @@ filetype plugin on
 let g:pydiction_location = '/usr/share/pydiction/complete-dict'
 
 " tagbar
-autocmd BufWinEnter *.py,*.tex nested TagbarOpen "open tagbar on certain filetypes
+autocmd BufWinEnter *.py,*.tex,*.c nested TagbarOpen "open tagbar on certain filetypes
 let g:tagbar_type_tex = {
   \ 'ctagstype' : 'latex',
   \ 'kinds' : [
