@@ -66,7 +66,7 @@ Bundle 'file:///$HOME/development/xptemplate-snippets'
 Bundle 'nblock/vim-dokuwiki'
 Bundle 'SudoEdit.vim'
 Bundle 'altercation/vim-colors-solarized'
-Bundle 'TeX-PDF'
+Bundle 'Lokaltog/vim-powerline'
 
 filetype plugin indent on   " required by vundle
 
