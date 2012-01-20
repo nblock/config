@@ -1,0 +1,31 @@
+# [Created by task 1.9.4 1/16/2012 21:12:11]
+# Taskwarrior program configuration file.
+# For more documentation, see http://taskwarrior.org or try 'man task', 'man task-faq',
+# 'man task-tutorial', 'man task-color', 'man task-sync' or 'man taskrc'
+
+# Here is an example of entries that use the default, override and blank values
+#   variable=foo   -- By specifying a value, this overrides the default
+#   variable=      -- By specifying no value, this means no default
+#   #variable=foo  -- By commenting out the line, or deleting it, this uses the default
+
+# Use the command 'task show' to see all defaults and overrides
+
+# Files
+data.location=/~/.task
+
+# Date Settings
+weekstart=Monday
+dateformat=D.M.Y
+dateformat.report=D.M.Y
+dateformat.holiday=YMD
+dateformat.annotation=D.M.Y
+report.X.dateformat=D.M.Y
+
+# sync
+merge.autopush=yes
+merge.default.uri=ssh://nblock/~/.task/
+push.default.uri=ssh://nblock/~/.task/
+pull.default.uri=ssh://nblock/~/.task/
+
+# theme support
+include /~/.solarized-task/solarized-dark-256.theme
