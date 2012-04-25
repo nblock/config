@@ -187,7 +187,6 @@ tasklist.buttons = awful.util.table.join(
 		end)
 )
 
-
 for s = 1, screen.count() do
     -- Create a promptbox
     promptbox[s] = awful.widget.prompt({ layout = awful.widget.layout.horizontal.leftright })
@@ -214,7 +213,7 @@ for s = 1, screen.count() do
     -- Create the wibox
     wibox[s] = awful.wibox({
         position = "top", screen = s,
-        fg = beautiful.fg_normal, bg = beautiful.bg_normal
+        fg = beautiful.fg_normal, bg = beautiful.bg_normal, height=beautiful.widget_height
     })
     -- Add widgets to the wibox
     wibox[s].widgets = {{
@@ -223,12 +222,12 @@ for s = 1, screen.count() do
     },
         s == screen.count() and systray or nil,
         spacer, datewidget,
-	separator, volwidget,
+        separator, volwidget,
         separator, batwidget,
         separator, cpuwidget,
         separator, thermalwidget,
         separator, cmus,
-	separator, tasklist[s],
+        separator, tasklist[s],
         layout = awful.widget.layout.horizontal.rightleft
     }
 end
@@ -455,7 +454,7 @@ client.add_signal("unfocus", function(c) c.border_color = beautiful.border_norma
 -- }}}
 
 -- {{{ Autostart
---os.execute("blueman-applet &")
+os.execute("blueman-applet &")
 -- }}}
 
 -- vim: fdm=marker fdl=0 sts=4 ai

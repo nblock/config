@@ -67,6 +67,7 @@ Bundle 'nblock/vim-dokuwiki'
 Bundle 'SudoEdit.vim'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'Lokaltog/vim-powerline'
+Bundle 'sjl/gundo.vim'
 
 filetype plugin indent on   " required by vundle
 
@@ -129,6 +130,7 @@ map <F7> :call MySpellLang()<CR>
 imap <F7> <C-o>:call MySpellLang()<CR>
 nmap <leader>$ :call Preserve("%s/\\s\\+$//e")<CR>
 nmap <leader>= :call Preserve("normal gg=G")<CR>
+nnoremap <F9> :GundoToggle<CR>
 
 " switch between buffers
 nnoremap <leader>j <C-w>j

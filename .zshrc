@@ -15,7 +15,7 @@ setopt AUTO_PUSHD           # use automated directory stack
 setopt PUSHD_IGNORE_DUPS    # ignore directory stack dups
 
 # colors
-eval `dircolors .config/dircolors/dircolors.256dark`
+eval `dircolors $HOME/.config/dircolors/dircolors.256dark`
 
 # stuff
 setopt AUTOCD       # autocd into dirs
@@ -104,6 +104,9 @@ alias Ss='y -Ss'
 alias clean='y -Qdt && y -Scc'
 alias su='su -'
 alias config='git --git-dir=$HOME/.config.git/ --work-tree=$HOME'
+alias t='task'
+alias ta='task add'
+alias tl='task list'
 
 # alias for git
 alias ga='git add'
@@ -147,6 +150,10 @@ bindkey '^i' expand-or-complete-prefix
 bindkey '^R' history-incremental-search-backward
 bindkey '\e[A' history-beginning-search-backward
 bindkey '\e[B' history-beginning-search-forward
+
+# tmux ?
+bindkey "^[[1~" beginning-of-line
+bindkey "^[[4~" end-of-line
 
 # hashes
 hash -d da=~/fh-hagenberg/da
