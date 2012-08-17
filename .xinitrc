@@ -1,5 +1,5 @@
 #!/bin/sh
-eval "$(gpg-agent --daemon)"
+eval "$(gpg-agent --daemon --enable-ssh-support)"
 urxvtd -q -f -o
 ck-launch-session nm-applet &
 xrdb -load ~/.Xresources
