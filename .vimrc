@@ -54,15 +54,15 @@ Bundle 'tpope/vim-speeddating'
 Bundle 'godlygeek/tabular'
 Bundle 'git://gitorious.org/vim-gnupg/vim-gnupg.git'
 Bundle 'matchit.zip'
-Bundle 'paster.vim'
 Bundle 'fs111/pydoc.vim'
+Bundle 'paster.vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'git://git.wincent.com/command-t.git'
 Bundle 'ciaranm/securemodelines'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'AutoComplPop'
-Bundle 'drmingdrmer/xptemplate'
-Bundle 'file:///$HOME/development/xptemplate-snippets'
+Bundle 'scrooloose/syntastic'
+Bundle 'SirVer/ultisnips'
 Bundle 'nblock/vim-dokuwiki'
 Bundle 'SudoEdit.vim'
 Bundle 'altercation/vim-colors-solarized'
@@ -148,6 +148,19 @@ vnoremap ? ?\v
 
 let g:tex_flavor = "latex"  " assume latex as default tex
 
+" UltiSnip
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+let g:UltiSnipsListSnippets="<leader><tab>"
+let g:UltiSnipsSnippetDirectories=["UltiSnips", "nblock-snippets"]
+
+"syntastic
+let g:syntastic_error_symbol='E'
+let g:syntastic_style_error_symbol='e'
+let g:syntastic_warning_symbol='W'
+let g:syntastic_style_warning_symbol='w'
+
 " vim-pydiction
 filetype plugin on
 let g:pydiction_location = '/usr/share/pydiction/complete-dict'
@@ -169,16 +182,6 @@ let g:tagbar_type_tex = {
 
 "AutoComplPop
 let g:acp_behaviorKeywordLength=4 "start matching after 4 consecutive chars -> less cpu consumption
-
-" xptemplate
-" custom settings in xptemplate/personal/ftplugin/
-let g:xptemplate_key = '<Plug>triggerxpt'
-let g:xptemplate_key_pum_only = '<C-r><Tab>'
-let g:xptemplate_nav_prev = '<S-Tab>'
-inoremap <Plug>closePUM <C-v><C-v><BS>
-imap <TAB> <Plug>closePUM<Plug>triggerxpt
-let g:xptemplate_fallback = 'nore:<TAB>'
-let g:xptemplate_vars = "SParg="
 
 " settings for different filetypes
 autocmd BufNewFile,BufRead PKGBUILD setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
