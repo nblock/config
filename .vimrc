@@ -165,6 +165,9 @@ let g:syntastic_style_warning_symbol='w'
 filetype plugin on
 let g:pydiction_location = '/usr/share/pydiction/complete-dict'
 
+"gnupg.vim
+let g:GPGUsePipes = 1
+
 " tagbar
 autocmd BufWinEnter *.py,*.tex,*.c nested TagbarOpen "open tagbar on certain filetypes
 let g:tagbar_type_tex = {

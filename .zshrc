@@ -22,7 +22,8 @@ setopt AUTOCD       # autocd into dirs
 setopt EXTENDEDGLOB # use extended globbing
 setopt CORRECTALL   # use autocorrection for commands and args
 setopt NOBEEP       # avoid "beep"ing
-setopt prompt_subst # Enables additional prompt extentions
+setopt PROMPT_SUBST # Enables additional prompt extentions
+unsetopt NOMATCH    # print no error on no matches
 stty stop ""        # disable <ctrl-s> and <ctrl-q>
 
 # environment variables
@@ -151,6 +152,11 @@ bindkey '^R' history-incremental-search-backward
 bindkey '\e[A' history-beginning-search-backward
 bindkey '\e[B' history-beginning-search-forward
 
+#edit current line in vim
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey -M vicmd v edit-command-line
+
 # tmux ?
 bindkey "^[[1~" beginning-of-line
 bindkey "^[[4~" end-of-line
@@ -192,14 +198,14 @@ function random(){
 # obtain public ip addresses (v4 and v6) if available
 function hostip(){
   IPV6=`curl -s ipv6.icanhazipv6.com |grep my_address |sed -e 's/.*>\(.*\)<\/p>/\1/'`
-  IPV4=`curl -s ipv4.icanhazipv6.com |grep my_address |sed -e 's/.*>\(.*\)<\/p>/\1/'`
+  IPV4=`curl -s ifconfig.me/ip`
   if [ -z "$IPV6" ]; then
     echo "IPv6: -"
   else
     echo "IPv6: ${IPV6}"
   fi
   if [ -z "$IPV4" ]; then
-    echo "IPv4: -"
+  echo "IPv4: -"
   else
     echo "IPv4: ${IPV4}"
   fi
