@@ -1,0 +1,6 @@
+#!/bin/bash
+ARCH=$(uname -m)
+KERNEL=$(uname -r)
+VBOX=$(pacman -Q virtualbox |cut -d ' ' -f2 |sed 's/.\{2\}$//')
+sudo dkms install vboxhost/$VBOX -k $KERNEL/$ARCH
+sudo modprobe vboxdrv
