@@ -172,7 +172,7 @@ function x()
       *.tar.gz)   tar xzf "$1"      ;;
       *.tar.bz)   tar xzf "$1"      ;;
       *.tar.Z)    tar xzf "$1"      ;;
-      *.tar.xz    tar -Jxf "$1"     ;;
+      *.tar.xz)   tar -Jxf "$1"     ;;
       *.bz2)      bunzip2 "$1"      ;;
       *.rar)      unrar x "$1"      ;;
       *.gz)       gunzip "$1"       ;;
