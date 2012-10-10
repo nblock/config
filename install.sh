@@ -13,6 +13,11 @@ for item in `find "$PWD/config" -maxdepth 1 -mindepth 1 -printf "%P\n"`;do
     ln -snf "$PWD/config/$item" "$HOME/.config/$item"
 done
 
+#process .vim
+for item in `find "$PWD/vim" -maxdepth 1 -mindepth 1 -printf "%P\n"`;do
+    ln -snf "$PWD/vim/$item" "$HOME/.vim/$item"
+done
+
 #solarized-task
 ln -snf "$PWD/solarized-task" "$HOME/.solarized-task"
 

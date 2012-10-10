@@ -1,0 +1,88 @@
+global !p
+def complete (t, opts):
+  if t:
+    opts = [m[len(t):] for m in opts if m.startswith(t)]
+  if len(opts) == 1:
+    return opts[0]
+  return "(" + "|".join(opts) + ")"
+endglobal
+
+snippet h1 "Header Level 1" b
+====== ${VISUAL}$1 ======
+$0
+endsnippet
+
+snippet h2 "Header Level 2" b
+===== ${VISUAL}$1 =====
+$0
+endsnippet
+
+snippet h3 "Header Level 3" b
+==== ${VISUAL}$1 ====
+$0
+endsnippet
+
+snippet h4 "Header Level 4" b
+=== ${VISUAL}$1 ===
+$0
+endsnippet
+
+snippet h5 "Header Level 5" b
+== ${VISUAL}$1 ==
+$0
+endsnippet
+
+snippet ** "bold text"
+**${VISUAL}$1**
+$0
+endsnippet
+
+snippet // "italic text"
+//${VISUAL}$1//
+endsnippet
+
+snippet __ "underlined text"
+__${VISUAL}$1__
+endsnippet
+
+snippet '' "monospaced text"
+''${VISUAL}$1''
+endsnippet
+
+snippet del "deleted text"
+<del>${VISUAL}$1</del>
+endsnippet
+
+snippet sup "superscript text"
+<sup>${VISUAL}$1</sup>
+endsnippet
+
+snippet sub "subscript text"
+<sub>${VISUAL}$1</sub>
+endsnippet
+
+snippet * "bulletpoint list" b
+  * ${VISUAL}$1
+endsnippet
+
+snippet - "ordered list" b
+  - ${VISUAL}$1
+endsnippet
+
+snippet code "code"
+<code>
+${VISUAL}$1
+</code>
+endsnippet
+
+snippet link "a link to another ressource"
+[[${VISUAL}$1|$2]]
+endsnippet
+
+snippet res "external ressources such as images and files"
+{{${VISUAL}$1|$2}}
+endsnippet
+
+snippet ~~ "control macro"
+~~$1`!p snip.rv=complete(t[1], ['NOTOC', 'NOCACHE'])`~~
+endsnippet
