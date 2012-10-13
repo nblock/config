@@ -15,6 +15,7 @@ URxvt*transparent:      false
 URxvt*fading:           0%
 URxvt*scrollTtyKeypress:true
 URxvt*internalBorder:   0
+URxvt*utf8:             1
 
 !--[Urls /launching/marking/yanking]--!
 URxvt*perl-ext:         default,matcher
