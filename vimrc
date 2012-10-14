@@ -153,7 +153,7 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 let g:UltiSnipsListSnippets="<leader><tab>"
-let g:UltiSnipsSnippetDirectories=["nblock-snippets", "ultisnips-dist"]
+let g:UltiSnipsSnippetDirectories=["UltiSnips", "nblock-snippets"]
 
 "syntastic
 let g:syntastic_error_symbol='E'
