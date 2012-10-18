@@ -30,7 +30,7 @@ stty stop ""        # disable <ctrl-s> and <ctrl-q>
 export EDITOR=vim
 export BROWSER=firefox
 export LANG=de_AT.UTF-8
-export TERM=rxvt-unicode
+export TERM=rxvt-unicode-256color
 export GPG_TTY=`tty`
 PATH=$HOME/bin:$PATH
 typeset -U PATH
@@ -128,6 +128,9 @@ gldate() {
   before=`date -d "$(date +$1) -1 day" +'%Y-%m-%d'`
   git log --oneline --graph --decorate --since="$before" --until="$1"
 }
+
+#set TERM only for ssh
+alias ssh='env TERM=rxvt-unicode ssh'
 
 # key bindings (vim mode)
 bindkey -v
