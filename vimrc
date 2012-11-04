@@ -68,6 +68,7 @@ Bundle 'SudoEdit.vim'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'sjl/gundo.vim'
+Bundle 'vim-scripts/AutoTag'
 
 filetype plugin indent on   " required by vundle
 
