@@ -132,6 +132,7 @@ imap <F7> <C-o>:call MySpellLang()<CR>
 nmap <leader>$ :call Preserve("%s/\\s\\+$//e")<CR>
 nmap <leader>= :call Preserve("normal gg=G")<CR>
 nnoremap <F9> :GundoToggle<CR>
+map <leader>cf [[kV][,c<space><CR>
 
 " switch between buffers
 nnoremap <leader>j <C-w>j
@@ -156,6 +157,7 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 let g:UltiSnipsListSnippets="<leader><tab>"
 let g:UltiSnipsDontReverseSearchPath="1"
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "nblock-snippets"]
+py import sys; sys.path.append("/home/flo/.vim/nblock-snippets")
 
 "syntastic
 let g:syntastic_error_symbol='E'
@@ -171,7 +173,6 @@ let g:pydiction_location = '/usr/share/pydiction/complete-dict'
 let g:GPGUsePipes = 1
 
 " tagbar
-autocmd BufWinEnter *.py,*.tex,*.c nested TagbarOpen "open tagbar on certain filetypes
 let g:tagbar_type_tex = {
   \ 'ctagstype' : 'latex',
   \ 'kinds' : [
