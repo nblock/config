@@ -1,50 +1,59 @@
 #!/bin/zsh
-#a simple script to backup android phones
+# a simple script to backup android phones
 MARKER="backup-android.marker"
 BASE="/media"
 DST="$HOME/backup/android"
 RSYNC="/usr/bin/rsync"
 
-#copy titanium backup
 function backup_titanium {
   DST_TITANIUM="$DST/titanium-backup"
-  if [[ ! -d $DST_TITANIUM ]];then mkdir $DST_TITANIUM;fi
+  if [[ ! -d "$DST_TITANIUM" ]]; then mkdir "$DST_TITANIUM";fi
   $RSYNC -av "$SRC/TitaniumBackup/" "$DST_TITANIUM/`date +'%Y-%m-%d'`"
 }
 
-#copy clockworkmod-backup
 function backup_clockworkmod {
   $RSYNC -av "$SRC/clockworkmod/backup/" "$DST/clockworkmod-backup"
 }
 
-#do the work
+function copy_passwordsafe {
+  $RSYNC -av "$HOME/passwords.kdb" "$SRC/keepassx/"
+}
+
+function backup_osmtracker {
+  TMP="$SRC/osmtracker"
+  if [[ -d "$TMP" ]]; then
+    cd "$TMP"
+    ls | grep -P "^[0-9]{4}-[0-9]{2}-[0-9]{2}" | xargs -I '{}' mv '{}' $HOME/osm/'{}'
+  fi
+}
+
+###########################################################################
+#                            to the hard work                             #
+###########################################################################
 #search $BASE for marker
 foreach item in `ls $BASE`;do 
-  if [ -e $BASE/$item/$MARKER ];then SRC="$BASE/$item";fi
+  if [ -e "$BASE/$item/$MARKER" ];then SRC="$BASE/$item";fi
 done
 if [[ ${SRC} == "" ]]; then 
   echo "could not find a valid android device under $BASE. Make sure it is mounted."
   return -1
 fi
 
-#get the owner of the device
 OWNER=`cat "$SRC/$MARKER"`
+DST="$DST/$OWNER"
 
 case "$OWNER" in
-"flo" | "tina")
-    DST="$DST/$OWNER"
+"flo")
+    backup_titanium
+    backup_clockworkmod
+    backup_osmtracker
+    copy_passwordsafe
+    ;;
+"tina")
     backup_titanium
     backup_clockworkmod
     ;;
-"flo")
-    #mv osmtracker in osm-folder
-    cd "$SRC/osmtracker"
-    ls | grep -P "^[0-9]{4}-[0-9]{2}-[0-9]{2}" | xargs -I '{}' mv '{}' $HOME/osm/'{}'
-
-    #copy passwords to device
-    $RSYNC -av "$HOME/passwords.kdb" "$SRC/keepassx/"
-    ;;
 *)
-    echo "no owner found in $SRC/$MARKER"
+    echo "no owner found in $SRC/$MARKER."
     ;;
 esac
