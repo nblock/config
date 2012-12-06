@@ -172,7 +172,7 @@ let g:pydiction_location = '/usr/share/pydiction/complete-dict'
 "gnupg.vim
 let g:GPGUsePipes = 1
 
-" tagbar
+" tagbar latex support
 let g:tagbar_type_tex = {
   \ 'ctagstype' : 'latex',
   \ 'kinds' : [
@@ -184,6 +184,16 @@ let g:tagbar_type_tex = {
   \ 'p:pagerefs:1'
   \ ],
   \ 'sort' : 0,
+  \ }
+
+" tagbar mediawiki support
+autocmd FileType mediawiki :!ctags %
+let g:tagbar_type_mediawiki = {
+  \ 'ctagstype' : 'mediawiki',
+  \ 'kinds'     : [
+  \ 'h:header',
+  \ ],
+  \ 'sort'    : 0
   \ }
 
 "AutoComplPop
