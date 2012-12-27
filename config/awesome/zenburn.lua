@@ -13,8 +13,7 @@ local awful = require("awful")
 -- {{{ Main
 theme = {}
 theme._icondir = awful.util.getdir("config") .. "/icons"
-theme._homedir = os.getenv("HOME")
-theme.wallpaper_cmd = { "awsetbg theme._homedir .. bilder/wallpaper/1440x900/arch_wall-by_kpolicano-1440x900.jpg" }
+theme.wallpaper = os.getenv("HOME") .. "/bilder/wallpaper/1440x900/arch_wall-by_kpolicano-1440x900.jpg"
 -- }}}
 
 -- {{{ Styles
