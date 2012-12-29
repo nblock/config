@@ -226,3 +226,7 @@ function serve(){
 # a shortcut for cropping pages with pdfcrop
 function crop()
   pdfcrop --pdftexcmd pdflatex --margins 2 "$1" "${1%.pdf}-cropped.pdf"
+
+# virtualenvwrapper
+export WORKON_HOME=~/.virtualenvs
+source /usr/bin/virtualenvwrapper.sh
