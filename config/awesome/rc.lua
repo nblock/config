@@ -247,7 +247,7 @@ for s = 1, screen.count() do
     right_layout:add(volwidget)
     right_layout:add(separator)
     right_layout:add(datewidget)
-    if s == 1 then right_layout:add(wibox.widget.systray()) end
+    if s == screen.count() then right_layout:add(wibox.widget.systray()) end
 
     -- Now bring it all together (with the tasklist in the middle)
     local layout = wibox.layout.align.horizontal()
