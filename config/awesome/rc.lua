@@ -138,27 +138,27 @@ separator:set_markup(" <span foreground='red'>•</span> ")
 
 -- cmus widget (global, to access it via cmus-notify)
 cmuswidget = wibox.widget.textbox()
-cmuswidget:set_markup("<span foreground='orange'>music: </span><span foreground='#00FF04'>-</span>")
+cmuswidget:set_markup("<span foreground='orange'>music: </span><span foreground='#00FF00'>-</span>")
 
 -- Date and time
 local datewidget = wibox.widget.textbox()
-vicious.register(datewidget, vicious.widgets.date, "<span foreground='#00FF04'>%a, %d.%m.%y - %H:%M</span>", 60)
+vicious.register(datewidget, vicious.widgets.date, "<span foreground='#00FF00'>%a, %d.%m.%y - %H:%M</span>", 60)
 
 -- CPU load
 local cpuwidget = wibox.widget.textbox()
-vicious.register(cpuwidget, vicious.widgets.cpu, "<span foreground='orange'>load: </span><span foreground='#00FF04'>$2%</span><span foreground='orange'> - </span><span foreground='#00FF04'>$3%</span><span foreground='orange'> - </span><span foreground='#00FF04'>$4%</span><span foreground='orange'> - </span><span foreground='#00FF04'>$5%</span>")
+vicious.register(cpuwidget, vicious.widgets.cpu, "<span foreground='orange'>load: </span><span foreground='#00FF00'>$2%</span><span foreground='orange'> - </span><span foreground='#00FF00'>$3%</span><span foreground='orange'> - </span><span foreground='#00FF00'>$4%</span><span foreground='orange'> - </span><span foreground='#00FF00'>$5%</span>")
 
 -- CPU temperature
 local thermalwidget = wibox.widget.textbox()
-vicious.register(thermalwidget, vicious.widgets.thermal, "<span foreground='orange'>temp: </span><span foreground='#00FF04'>$1°C</span>", 20, "thermal_zone0")
+vicious.register(thermalwidget, vicious.widgets.thermal, "<span foreground='orange'>temp: </span><span foreground='#00FF00'>$1°C</span>", 20, "thermal_zone0")
 
 -- Battery state
 local batwidget = wibox.widget.textbox()
-vicious.register(batwidget, vicious.widgets.bat, "<span foreground='orange'>bat: </span><span foreground='#00FF04'>$1$2%</span>", 60, "BAT0")
+vicious.register(batwidget, vicious.widgets.bat, "<span foreground='orange'>bat: </span><span foreground='#00FF00'>$1$2%</span>", 60, "BAT0")
 
 -- Volume widget
 local volwidget = wibox.widget.textbox()
-vicious.register(volwidget, vicious.widgets.volume, "<span foreground='orange'>vol: </span><span foreground='#00FF04'>$1%</span>", 1, 'PCM')
+vicious.register(volwidget, vicious.widgets.volume, "<span foreground='orange'>vol: </span><span foreground='#00FF00'>$1%</span>", 1, 'PCM')
 
 -- Create a wibox for each screen and add it
 mywibox = {}
