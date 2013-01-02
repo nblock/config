@@ -7,11 +7,10 @@ color info color237 color250
 color background red default
 color article yellow default
 
-
-#newsbeuter via proxy
-#in this case -> polipo (tor)
+#newsbeuter via tor
 use-proxy yes
-proxy localhost:8118
+proxy-type socks5
+proxy localhost:9050
 download-retries 4
 download-timeout 30
 
