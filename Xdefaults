@@ -19,7 +19,7 @@ URxvt*utf8:             1
 
 !--[Urls /launching/marking/yanking]--!
 URxvt*perl-ext:         default,matcher
-URxvt*urlLauncher:      /usr/bin/firefox
+URxvt*url-launcher:     /usr/bin/firefox
 URxvt*matcher.button:   1
 URxvt*matcher.pattern.1:\\bwww\\.[\\w-]\\.[\\w./?&@#-]*[\\w/-]
 
