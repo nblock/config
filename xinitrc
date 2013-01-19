@@ -5,4 +5,4 @@ xrdb -load ~/.Xresources
 xmodmap .Xmodmap &
 setxkbmap  -layout de -variant neo
 nm-applet --sm-disable &
-exec dbus-launch awesome
+exec i3
