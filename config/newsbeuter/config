@@ -25,11 +25,11 @@ refresh-on-startup yes
 user-agent "Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.0)"
 
 #various
-max-items 200		#number of feeds to hold in db
+max-items 300		# number of feeds to hold in db per url
 goto-next-feed yes
-#FF3.5 (requires config: browser.tabs.loadDivertedInBackground to be 'true')
-browser "firefox -new-tab %u > /dev/null 2>&1"
-cleanup-on-quit yes	#cleanup is always nice
+browser "/home/flo/bin/newsbeuter_links"
+cleanup-on-quit yes	# cleanup is always nice
+download-full-page yes  # load empty feeds
 
 #visibility of feeds
 show-read-feeds no	#list read feeds ? 
@@ -69,7 +69,7 @@ bookmark-cmd "~/bin/instapaper.py"
 
 #layout
 datetime-format "%d.%m %H:%M"
-text-width 0		#max text width to render html
+text-width 100		# max text width to render html
 display-article-progress yes
 show-keymap-hint no	#keyboard hints ?
 always-display-description true
