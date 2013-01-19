@@ -1,0 +1,9 @@
+#!/bin/sh
+#FF3.5 (requires config: browser.tabs.loadDivertedInBackground to be 'true')
+
+if echo "$1" | grep -e jpg$ -e jpeg$ -e gif$ -e png$
+then
+  feh "$1" &
+else
+  firefox "$1"
+fi
