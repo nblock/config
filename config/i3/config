@@ -1,0 +1,181 @@
+# i3 config file (v4)
+# nblock (at) archlinux (dot) us
+#
+# Please see http://i3wm.org/docs/userguide.html for a complete reference!
+
+# window title font
+font pango:Bitstream Vera Sans Mono 10
+
+# use Mouse+Mod4 to drag floating windows to their wanted position
+floating_modifier Mod4
+
+# start a terminal
+bindsym Mod4+Return exec urxvtc
+
+# kill focused window
+bindsym Mod4+Shift+c kill
+
+# start dmenu (a program launcher)
+bindsym Mod4+x exec "$HOME/bin/dmenu_multi"
+
+# change focus
+bindsym Mod4+n focus left
+bindsym Mod4+r focus right
+bindsym Mod4+t focus up
+bindsym Mod4+d focus down
+
+# move focused window
+bindsym Mod4+Shift+n move left
+bindsym Mod4+Shift+r move right
+bindsym Mod4+Shift+t move up
+bindsym Mod4+Shift+d move down
+
+# switch to next/prev workspace
+# TODO switch to other screens
+bindsym Mod4+Left workspace prev
+bindsym Mod4+Right workspace next
+#bindsym Mod4+Up focus up
+#bindsym Mod4+Down focus down #
+
+# move windows to different workspaces
+# TODO switch to other screens
+bindsym Mod4+Shift+Left move workspace to output left
+bindsym Mod4+Shift+Right move workspace to output right
+#bindsym Mod4+Shift+Up move up
+#bindsym Mod4+Shift+Down move down
+
+# split in horizontal/vertical orientation
+bindsym Mod4+h split h
+bindsym Mod4+v split v
+
+# enter fullscreen mode for the focused container
+bindsym Mod4+f fullscreen
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym Mod4+s layout stacking
+bindsym Mod4+w layout tabbed
+bindsym Mod4+e layout toggle split
+
+# toggle tiling / floating
+bindsym Mod4+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym Mod4+space focus mode_toggle
+
+# focus the parent container
+bindsym Mod4+a focus parent
+
+# focus the child container
+bindsym Mod4+i focus child
+
+# switch to workspace
+bindsym Mod4+1 workspace 1
+bindsym Mod4+2 workspace 2
+bindsym Mod4+3 workspace 3
+bindsym Mod4+4 workspace 4
+bindsym Mod4+5 workspace 5
+bindsym Mod4+6 workspace 6
+bindsym Mod4+7 workspace 7
+bindsym Mod4+8 workspace 8
+bindsym Mod4+9 workspace 9
+bindsym Mod4+0 workspace 10
+
+# move focused container to workspace
+bindsym Mod4+Shift+1 move container to workspace 1
+bindsym Mod4+Shift+2 move container to workspace 2
+bindsym Mod4+Shift+3 move container to workspace 3
+bindsym Mod4+Shift+4 move container to workspace 4
+bindsym Mod4+Shift+5 move container to workspace 5
+bindsym Mod4+Shift+6 move container to workspace 6
+bindsym Mod4+Shift+7 move container to workspace 7
+bindsym Mod4+Shift+8 move container to workspace 8
+bindsym Mod4+Shift+9 move container to workspace 9
+bindsym Mod4+Shift+0 move container to workspace 10
+
+# quickly navigate back to previous window
+workspace_auto_back_and_forth yes
+
+# reload the configuration file
+bindsym Mod4+Shift+q reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym Mod4+Shift+y restart
+# exit i3 (logs you out of your X session)
+bindsym Mod4+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym n           resize shrink width 10 px or 10 ppt
+        bindsym r           resize grow width 10 px or 10 ppt
+        bindsym r           resize shrink height 10 px or 10 ppt
+        bindsym t           resize grow height 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left        resize shrink width 10 px or 10 ppt
+        bindsym Down        resize grow height 10 px or 10 ppt
+        bindsym Up          resize shrink height 10 px or 10 ppt
+        bindsym Right       resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym Mod4+y mode "resize"
+
+# valid for my Thinkpad
+bindsym XF86ScreenSaver exec "i3lock -d -c 000000"
+bindsym XF86AudioMute exec "amixer sset PCM toggle"
+bindsym XF86AudioRaiseVolume exec "amixer set PCM 2%+"
+bindsym XF86AudioLowerVolume exec "amixer set PCM 2%-"
+bindsym XF86AudioNext exec "cmus-remote --next"
+bindsym XF86AudioPrev exec "cmus-remote --prev"
+bindsym XF86AudioPlay exec "cmus-remote --pause"
+bindsym XF86AudioStop exec "cmus-remote --stop"
+bindsym XF86Sleep exec "systemctl suspend"
+bindsym XF86WebCam exec "$HOME/bin/bluetooth-toggle.sh"
+bindsym XF86TouchpadToggle exec "$HOME/bin/touchpad-toggle.sh"
+# currently unused
+#bindsym XF86Tools exec "something"
+#bindsym XF86Calculator exec "something"
+#bindsym XF86Launch1 exec "something" # ThinkVantage
+#bindsym XF86Display exec "something" # fn - f7
+
+# focus popular clients by title/class
+bindsym Mod4+Mod1+f [class="(?i)firefox"] focus
+bindsym Mod4+Mod1+t [class="(?i)thunderbird"] focus
+bindsym Mod4+Mod1+p [class="(?i)pidgin"] focus
+bindsym Mod4+Mod1+k [class="(?i)keepassx"] focus
+bindsym Mod4+Mod1+c [title="(?i)cmus"] focus
+bindsym Mod4+Mod1+n [title="(?i)newsbeuter"] focus
+bindsym Mod4+Mod1+j [title="(?i)jdownloader"] focus
+
+# colors
+# class                 border  backgr. text    indicator
+client.focused          #4c7899 #285577 #ffffff #ff0000
+client.focused_inactive #333333 #5f676a #ffffff #484e50
+client.unfocused        #333333 #222222 #888888 #292d2e
+client.urgent           #2f343a #900000 #ffffff #900000
+
+# The status bar
+bar {
+    status_command    i3status
+    position          top
+    # use anothor font to get the separator in a different color
+    font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+
+  colors {
+    statusline         #00ff00
+
+    # color_class      border  backg.  text
+    focused_workspace  #4c7899 #285577 #00ff00
+    active_workspace   #333333 #5f676a #ffffff
+    inactive_workspace #333333 #222222 #888888
+    urgent_workspace   #2f343a #900000 #ffffff
+  }
+}

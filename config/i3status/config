@@ -1,0 +1,36 @@
+general {
+        output_format = i3bar
+        colors = true
+        interval = 5
+}
+
+order += "load"
+order += "battery 0"
+order += "cpu_temperature 0"
+order += "volume master"
+order += "time"
+
+load {
+        format = "load: %1min"
+}
+
+cpu_temperature 0 {
+        format = "temp: %degrees °C"
+}
+
+battery 0 {
+        format = "bat: %status %percentage %remaining"
+        threshold_type = "percentage"
+        low_threshold = 20
+}
+
+volume master {
+       format = "vol: %volume"
+       device = "default"
+       mixer = "PCM"
+       mixer_idx = 0
+}
+
+time {
+        format = "%a, %d.%m.%y %H:%M"
+}
