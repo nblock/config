@@ -1,6 +1,5 @@
 !URxvt settings
 !!--[Urxvt Options]--!
-URxvt*title:            urxvtc
 URxvt*termName:         rxvt-unicode-256color
 URxvt*cursorBlink:      true
 URxvt*urgentOnBell:     true
