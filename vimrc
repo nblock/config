@@ -23,6 +23,8 @@ set scrolloff=4                " 4 lines above/below cursor when scrolling
 set listchars=tab:▸\ ,eol:¬    " different symbols for tabs and eol
 set nomodeline                 " use secure modeline
 set tabpagemax=30              " 30 instead of 10 concurrent tabs
+set ignorecase                 " ignore the case on searches
+set smartcase                  " lowerspace search will ignore case, uppercase will honor the case
 set sessionoptions=blank,buffers,curdir,folds,globals,help,localoptions,options,resize,tabpages,winsize,winpos
 
 " use a terminal title
@@ -69,6 +71,7 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'sjl/gundo.vim'
 Bundle 'vim-scripts/AutoTag'
+Bundle 'vim-scripts/restore_view.vim'
 
 filetype plugin indent on   " required by vundle
 
