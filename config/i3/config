@@ -37,12 +37,11 @@ bindsym Mod4+Right workspace next
 #bindsym Mod4+Up focus up
 #bindsym Mod4+Down focus down #
 
-# move windows to different workspaces
-# TODO switch to other screens
-bindsym Mod4+Shift+Left move workspace to output left
-bindsym Mod4+Shift+Right move workspace to output right
-#bindsym Mod4+Shift+Up move up
-#bindsym Mod4+Shift+Down move down
+# move container and workspaces to a different screen
+bindsym Mod4+Shift+Left move container to output left
+bindsym Mod4+Shift+Right move container to output right
+bindsym Mod4+Shift+Up move workspace to output left
+bindsym Mod4+Shift+Down move workspace to output right
 
 # split in horizontal/vertical orientation
 bindsym Mod4+h split h
