@@ -67,6 +67,18 @@ bindsym Mod4+a focus parent
 # focus the child container
 bindsym Mod4+i focus child
 
+# use a 2 monitor split setup where each screen has an equal amount of workspaces
+workspace 1 output HDMI1
+workspace 2 output HDMI1
+workspace 3 output HDMI1
+workspace 4 output HDMI1
+workspace 5 output HDMI1
+workspace 6 output LVDS1
+workspace 7 output LVDS1
+workspace 8 output LVDS1
+workspace 9 output LVDS1
+workspace 10 output LVDS1
+
 # switch to workspace
 bindsym Mod4+1 workspace 1
 bindsym Mod4+2 workspace 2
