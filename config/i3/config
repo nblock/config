@@ -160,11 +160,12 @@ bindsym XF86TouchpadToggle exec "$HOME/bin/touchpad-toggle.sh"
 # focus popular clients by title/class
 bindsym Mod4+Mod1+f [class="(?i)firefox"] focus
 bindsym Mod4+Mod1+t [class="(?i)thunderbird"] focus
-bindsym Mod4+Mod1+p [class="(?i)pidgin"] focus
+bindsym Mod4+Mod1+p [class="(?i)pidgin" window_role="conversation"] focus
+bindsym Mod4+Mod1+b [class="(?i)pidgin" window_role="buddy_list"] focus
 bindsym Mod4+Mod1+k [class="(?i)keepassx"] focus
 bindsym Mod4+Mod1+c [title="(?i)cmus"] focus
 bindsym Mod4+Mod1+n [title="(?i)newsbeuter"] focus
-bindsym Mod4+Mod1+j [title="(?i)jdownloader"] focus
+bindsym Mod4+Mod1+j [title="JDownloader"] focus
 
 # colors
 # class                 border  backgr. text    indicator
@@ -175,6 +176,11 @@ client.urgent           #2f343a #900000 #ffffff #900000
 
 # wallpaper
 exec --no-startup-id feh --bg-scale "$HOME/bilder/wallpaper/1440x900/arch_wall-by_kpolicano-1440x900.jpg"
+
+# autostart
+exec "firefox"
+exec "thunderbird"
+exec "pidgin"
 
 # The status bar
 bar {
