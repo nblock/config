@@ -1,3 +1,33 @@
+!URxvt settings
+!!--[Urxvt Options]--!
+URxvt*termName:         rxvt-unicode-256color
+URxvt*cursorBlink:      true
+URxvt*urgentOnBell:     true
+URxvt*scrollBar:        false
+URxvt*boldMode:         false
+URxvt*imLocale:         de_AT.UTF-8
+URxvt*loginShell:       true
+URxvt*borderless:       false
+URxvt*jumpScroll:       true
+URxvt*saveLines:        5000
+URxvt*transparent:      false
+URxvt*fading:           0%
+URxvt*scrollTtyKeypress:true
+URxvt*internalBorder:   0
+URxvt*utf8:             1
+
+!--[Urls /launching/marking/yanking]--!
+URxvt*perl-ext:         default,matcher
+URxvt*url-launcher:     /usr/bin/firefox
+URxvt*matcher.button:   1
+URxvt*matcher.pattern.1:\\bwww\\.[\\w-]\\.[\\w./?&@#-]*[\\w/-]
+
+!--[Fonts]--!
+URxvt*font:             xft:Bitstream Vera Sans Mono:pixelsize=13:antialias=false
+URxvt*italicFont:       xft:Bitstream Vera Sans Mono:italic:autohint=true:antialias=false
+URxvt*boldFont:         xft:Bitstream Vera Sans Mono:bold:autohint=true:antialias=false
+URxvt*boldItalicFont:   xft:Bitstream Vera Sans Mono:bold:italic:autohint=true:antialias=false
+
 ! neo vs. urxvt vs. vim:
 ! http://wiki.neo-layout.org/ticket/182
 URxvt.keysym.KP_Add:    +
@@ -16,7 +46,6 @@ URxvt.keysym.KP_7:      7
 URxvt.keysym.KP_8:      8
 URxvt.keysym.KP_9:      9
 URxvt.keysym.KP_0:      0
-
 
 !! from: https://raw.github.com/altercation/solarized/master/xresources-colors-solarized/Xresources
 !! drop in Solarized colorscheme for Xresources/Xdefaults
