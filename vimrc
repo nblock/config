@@ -62,7 +62,6 @@ Bundle 'majutsushi/tagbar'
 Bundle 'git://git.wincent.com/command-t.git'
 Bundle 'ciaranm/securemodelines'
 Bundle 'scrooloose/nerdcommenter'
-Bundle 'AutoComplPop'
 Bundle 'scrooloose/syntastic'
 Bundle 'SirVer/ultisnips'
 Bundle 'nblock/vim-dokuwiki'
@@ -72,6 +71,7 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'sjl/gundo.vim'
 Bundle 'vim-scripts/AutoTag'
 Bundle 'vim-scripts/restore_view.vim'
+Bundle 'Valloric/YouCompleteMe'
 
 filetype plugin indent on   " required by vundle
 
@@ -153,7 +153,7 @@ vnoremap ? ?\v
 
 let g:tex_flavor = "latex"  " assume latex as default tex
 
-" UltiSnip
+" UltiSnips
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
@@ -199,8 +199,10 @@ let g:tagbar_type_mediawiki = {
   \ 'sort'    : 0
   \ }
 
-"AutoComplPop
-let g:acp_behaviorKeywordLength=4 "start matching after 4 consecutive chars -> less cpu consumption
+" YouCompleteMe
+" disable <tab>, <s-tab> as it is used by UltiSnips, c-n and c-p work just fine
+let g:ycm_key_list_select_completion = ['<Down>']
+let g:ycm_key_list_previous_completion = ['<Up>']
 
 " settings for different filetypes
 autocmd BufNewFile,BufRead PKGBUILD setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
