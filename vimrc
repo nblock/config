@@ -58,8 +58,8 @@ Bundle 'git://gitorious.org/vim-gnupg/vim-gnupg.git'
 Bundle 'matchit.zip'
 Bundle 'fs111/pydoc.vim'
 Bundle 'paster.vim'
+Bundle 'kien/ctrlp.vim'
 Bundle 'majutsushi/tagbar'
-Bundle 'git://git.wincent.com/command-t.git'
 Bundle 'ciaranm/securemodelines'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/syntastic'
@@ -203,6 +203,9 @@ let g:tagbar_type_mediawiki = {
 " disable <tab>, <s-tab> as it is used by UltiSnips, c-n and c-p work just fine
 let g:ycm_key_list_select_completion = ['<Down>']
 let g:ycm_key_list_previous_completion = ['<Up>']
+
+" CtrlP
+let g:ctrlp_cmd = 'CtrlPMixed'
 
 " settings for different filetypes
 autocmd BufNewFile,BufRead PKGBUILD setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
