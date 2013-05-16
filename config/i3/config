@@ -186,8 +186,6 @@ exec "pidgin"
 bar {
     status_command    i3status
     position          top
-    # use anothor font to get the separator in a different color
-    font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 
   colors {
     statusline         #00ff00
