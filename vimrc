@@ -26,6 +26,7 @@ set tabpagemax=30              " 30 instead of 10 concurrent tabs
 set ignorecase                 " ignore the case on searches
 set smartcase                  " lowerspace search will ignore case, uppercase will honor the case
 set sessionoptions=blank,buffers,curdir,folds,globals,help,localoptions,options,resize,tabpages,winsize,winpos
+set number                     " enable line numbering
 
 " use a terminal title
 set title
@@ -72,6 +73,7 @@ Bundle 'sjl/gundo.vim'
 Bundle 'vim-scripts/AutoTag'
 Bundle 'vim-scripts/restore_view.vim'
 Bundle 'Valloric/YouCompleteMe'
+Bundle 'tpope/vim-unimpaired'
 
 filetype plugin indent on   " required by vundle
 
