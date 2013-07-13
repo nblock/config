@@ -178,9 +178,7 @@ client.urgent           #2f343a #900000 #ffffff #900000
 exec --no-startup-id feh --bg-scale "$HOME/bilder/wallpaper/1440x900/arch_wall-by_kpolicano-1440x900.jpg"
 
 # autostart
-exec "firefox"
-exec "thunderbird"
-exec "pidgin"
+exec "blueman-applet"
 
 # The status bar
 bar {
