@@ -164,7 +164,6 @@ bindsym Mod4+Mod1+p [class="(?i)pidgin" window_role="conversation"] focus
 bindsym Mod4+Mod1+b [class="(?i)pidgin" window_role="buddy_list"] focus
 bindsym Mod4+Mod1+k [class="(?i)keepassx"] focus
 bindsym Mod4+Mod1+c [title="(?i)cmus"] focus
-bindsym Mod4+Mod1+n [title="(?i)newsbeuter"] focus
 bindsym Mod4+Mod1+j [title="JDownloader"] focus
 
 # colors
