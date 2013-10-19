@@ -220,3 +220,5 @@ autocmd BufWritePre *.py,*.tex :call Preserve("%s/\\s\\+$//e")    " clean up whi
 syntax enable
 set background=dark
 colorscheme solarized
+
+ let g:ycm_confirm_extra_conf = 0
