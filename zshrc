@@ -111,6 +111,7 @@ alias tl='task list'
 # alias for git
 alias ga='git add'
 alias gpush='git push'
+alias gtush='git push --tags'
 alias gs='git status -sb'
 alias gd='git diff'
 alias gdc='git diff --cached'
